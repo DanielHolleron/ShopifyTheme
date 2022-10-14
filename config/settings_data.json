@@ -164,7 +164,7 @@
           "9cb8aa0c-bd7a-455d-a4c8-d19a37591c29": {
             "type": "select",
             "settings": {
-              "cat-class": "column has-text-centered px-5",
+              "cat-class": "column has-text-centered",
               "fullcat-link": "",
               "catimg": "shopify:\/\/shop_images\/promo2_f4273604-aa72-4651-8663-16f9d16caf11.jpg",
               "fullcat_sub": "We've been in the industry",
