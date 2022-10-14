@@ -114,22 +114,25 @@
           "d43d78a4-3475-4002-84f0-65bc732c278c": {
             "type": "select",
             "settings": {
-              "usp_title": "free uk postage",
-              "usp_subtitle": "Worldwide Postage Available PRICE may vary. Free sample on every order!"
+              "uspimg": "shopify:\/\/shop_images\/truck-fast-solid.png",
+              "usp_title": "Fast, Free UK Delivery",
+              "usp_subtitle": "Across all our orders"
             }
           },
           "f5e87adf-d296-46f1-a6ea-5b1a65af5376": {
             "type": "select",
             "settings": {
-              "usp_title": "Satisfied or refunded",
-              "usp_subtitle": "We're 100% sure you'll love our supplements, or you'll get your money back!"
+              "uspimg": "shopify:\/\/shop_images\/wrench-solid.png",
+              "usp_title": "Genuine Parts",
+              "usp_subtitle": "Handpicked by Experts"
             }
           },
           "fb920441-2f78-4107-bfcb-c61d18360cb6": {
             "type": "select",
             "settings": {
-              "usp_title": "Excellent Customer Support",
-              "usp_subtitle": "We're always here to help out if you have a question, contact us by live chat!"
+              "uspimg": "shopify:\/\/shop_images\/comments-solid.png",
+              "usp_title": "Top Notch Customer Service",
+              "usp_subtitle": "Message us Today for help"
             }
           }
         },
