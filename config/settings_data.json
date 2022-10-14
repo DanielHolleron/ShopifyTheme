@@ -92,8 +92,8 @@
         "type": "section_header",
         "settings": {
           "sh_classes": "container pb-3 px-3 mt-6",
-          "sh_pre": "Check Out Our",
-          "sh_title": "Latest Products"
+          "sh_pre": "Featured",
+          "sh_title": "Products"
         }
       },
       "164925880603c039c4": {
