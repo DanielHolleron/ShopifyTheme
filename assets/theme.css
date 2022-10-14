@@ -135,6 +135,7 @@
 #catgrid .catwrap:hover img { transform: scale(1.05); transition: all 0.2s; }
 
 /* USP Boxes */
+#usp-section { background-color: #f8f8f8; }
 #usp-section .uspbox.landscape { display: flex; flex-direction: row;justify-content: center; }
 #usp-section .uspbox.landscape .usp-txt { margin-top: auto; margin-bottom: auto; }
 #usp-section .uspbox.landscape .usp-img { margin-right:15px; }
