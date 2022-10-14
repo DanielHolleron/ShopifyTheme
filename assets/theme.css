@@ -124,7 +124,7 @@
 #catgrid .catwrap { position: relative; overflow: hidden; }
 #catgrid .catwrap .caption { position: absolute; width: 65%; height: 100%; top: 0; left: 0; display: flex; flex-direction: column; justify-content: center; padding: 0 5%; }
 #catgrid .has-text-centered .caption { width: 100% !important; }
-#catgrid .has-text-centered .caption .bttn.is-primary { margin: 25px auto 0px; } 
+#catgrid .has-text-centered .caption .bttn.is-primary { margin: 35px auto 0px; } 
 #catgrid .catwrap .caption .bttn.is-primary { padding: 15px 25px; background-color: var(--is-primary); margin-top: 25px; width: fit-content; width: -moz-fit-content; color: #fff; text-transform: uppercase; font-weight: 600; }
 #catgrid .catwrap .caption p { font-size: 15px; text-transform: uppercase; }
 #catgrid .catwrap .caption p, #catgrid .catwrap .caption h3 { color: #fff !important; } 
@@ -135,17 +135,17 @@
 #catgrid .catwrap:hover img { transform: scale(1.05); transition: all 0.2s; }
 
 /* USP Boxes */
-#usp-section .uspbox.landscape { display: flex; flex-direction: row;justify-content: flex-start; }
+#usp-section .uspbox.landscape { display: flex; flex-direction: row;justify-content: center; }
 #usp-section .uspbox.landscape .usp-txt { margin-top: auto; margin-bottom: auto; }
 #usp-section .uspbox.landscape .usp-img { margin-right:15px; }
 #usp-section .uspbox.landscape .usp-img img { max-width: 100px; }
 
-#usp-section .uspbox.landscape .usp-txt h4 { text-transform: uppercase; letter-spacing: 2px; color: #333; }
+#usp-section .uspbox.landscape .usp-txt h4 { text-transform: uppercase; letter-spacing: 2px; color: #333; font-weight: 600; }
 #usp-section .uspbox.landscape .usp-txt p { font-size: 14px; letter-spacing: 0.5px; color: #7a7a7a; }
 
 /* Brand Bar */
 #brandrow { background: #333; margin: 12px 0px; }
-#brandrow .brandbox { height: 100%; display: flex; flex-direction: column; justify-content: center; background-color: #333; }
+#brandrow .brandbox { height: 100%; display: flex; flex-direction: column; justify-content: center; background-color: #333;  }
 #brandrow .brandbox .brandbox-img { text-align: center; }
 #brandrow .brandbox .brandbox-img img { width: auto; max-width: 70%; transition: all 0.4s; }
 #brandrow .brandbox:hover .brandbox-img img { transform: scale(0.9); transition: all 0.2s; }
