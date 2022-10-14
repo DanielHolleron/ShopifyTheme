@@ -266,7 +266,7 @@ html.sticky-modal, html.sticky-modal body { height: 100vh; overflow:hidden; }
 
 #shopify-section-footer a { color: #fff; }
 
-#footerbottom { background-color: #222; color: #eaeaea; text-transform: uppercase; letter-spacing: 2px;font-size: 11px; }
+#footerbottom { color: #eaeaea; text-transform: uppercase; letter-spacing: 2px;font-size: 11px; }
 
 
 @media(max-width: 990px) {
