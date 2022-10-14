@@ -257,7 +257,7 @@
 html.sticky-modal, html.sticky-modal body { height: 100vh; overflow:hidden; }
 
 /* Footer */
-.section-footer { background-color: #333; color: #fff; }
+.section-footer { color: #fff; }
 #shopify-section-footer .footer-logo img { max-height: 80px; }
 #shopify-section-footer h5 { font-size: 18px; font-weight: 400; text-transform: uppercase; letter-spacing: 2px; }
 #shopify-section-footer .footer-blurb p { font-size: 14px; letter-spacing: 1px; line-height: 2; margin-top: 10px; }
