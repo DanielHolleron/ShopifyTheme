@@ -159,11 +159,12 @@
 
 /* Image with Text Banner */
 #herobanner { background-size: cover; }
+#herobanner.hero.is-medium .hero-body { padding: 7rem 1.5rem; }
 #herobanner .txt-wrap { width: 100%; max-width: 650px; }
 #herobanner .txt-wrap h1 { text-transform: uppercase; font-size: 35px; font-weight: 800; color: #fff; letter-spacing: 2px; line-height: 1.5;  margin-bottom: 25px; }
 #herobanner .txt-wrap p { color: #fff; font-size: 15px; letter-spacing: 0.5px; line-height: 2; text-transform: uppercase; }
 #herobanner .txt-wrap p span { color: var(--is-primary); }
-#herobanner .txt-wrap .button.is-primary { text-transform: uppercase; font-size: 15px; letter-spacing: 2px; padding: 25px !important; border: none !important; margin-top: 15px; }
+#herobanner .txt-wrap .button.is-primary { text-transform: uppercase; font-size: 15px; letter-spacing: 2px; padding: 25px !important; border: none !important; margin-top: 15px; border-radius: 0px; }
 
 /* Media Grid */
 #mediagrid .content-wrap h3 { font-size: 24px; font-weight: 400; text-transform: uppercase; letter-spacing: 2px; }
