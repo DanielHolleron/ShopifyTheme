@@ -116,8 +116,9 @@
 #catbar .navbar-item .cat-item { font-size: 15px; letter-spacing: 0.4px; }
 
 /* Section Header */
+#section-header .sh-wrap * { display: inline; }
 #section-header .sh-wrap h3 { font-size: 30px; font-weight: 800; text-transform: uppercase; }
-#section-header .sh-wrap p { font-size: 30px; color: #fff; text-transform: uppercase; letter-spacing: 2px; background-color: var(--is-primary); padding: 0 10px; margin-right: 15px; font-weight: 800; }
+#section-header .sh-wrap p { font-size: 30px; color: #fff; text-transform: uppercase; letter-spacing: 2px; background-color: var(--is-primary); padding: 5px 10px; margin-right: 15px; font-weight: 800; }
 
 /* Cat Grid */
 #catgrid .catwrap { position: relative; overflow: hidden; }
