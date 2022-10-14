@@ -86,7 +86,7 @@
 
 #searchmob .form-inline { display: flex; flex-direction: row; justify-content: space-between; }
 #searchmob .form-control { width: 85%; margin: 0 !important; padding: 10px; border-radius: 0; border: 1px solid #eee; text-transform: uppercase; letter-spacing: 2px; }
-#searchmob button { width: 15%; margin: 0 !important; border: none; border-radius: 0px; background: var(--is-primary); color: #fff; padding: 11px; }
+#searchmob button { width: 15%; margin: 0 !important; border: none; border-radius: 0px; color: #fff; padding: 11px; }
 
 #promobar .promobar_item { text-transform: uppercase; letter-spacing: 2px; font-size: 14px; }
 

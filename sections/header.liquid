@@ -39,7 +39,7 @@
                   <div class="searchbar">
                      <form class="form-inline my-2 my-lg-0" action="{{ '/search' }}" method="GET">                     
                         <input class="form-control" type="search" name="q" placeholder="Search" aria-label="Search" value="{{ search.terms | escape }}">
-                        <button class="btn btn-outline-info" type="submit"><i class="fas fa-search"></i></button>                     
+                        <button class="btn btn-outline-info is-secondary" type="submit"><i class="fas fa-search"></i></button>                     
                      </form>
                   </div>
                </div>
@@ -62,7 +62,7 @@
                            </a>
                            {% endif %}
                        
-                       <a class="button is-secondary bttn" href="{{ routes.cart_url }}"><i class="fas fa-shopping-basket"></i></a>
+                       <a class="button is-primary bttn" href="{{ routes.cart_url }}"><i class="fas fa-shopping-basket"></i></a>
       
                      </div>
                   </div>
@@ -103,7 +103,7 @@
       <div class="searchbar">
         <form class="form-inline" action="{{ '/search' }}" method="GET">                     
           <input class="form-control" type="search" name="q" placeholder="Search" aria-label="Search" value="{{ search.terms | escape }}">
-          <button class="btn btn-outline-info" type="submit"><i class="fas fa-search"></i></button>                     
+          <button class="btn btn-outline-info is-secondary" type="submit"><i class="fas fa-search"></i></button>                     
         </form>
       </div>
     </div>
