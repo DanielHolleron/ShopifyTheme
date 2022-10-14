@@ -7,14 +7,12 @@
          <h1 class="title has-text-inherit">
             {{ section.settings.title }}
          </h1>
-         <p class="subtitle has-text-inherit">
+         <div class="subtitle has-text-inherit">
             {{ section.settings.text }}
-
-            {% if section.settings.button_label %}
-               <br />
-               <a href="{{ section.settings.button_link }}" class="button is-secondary">{{ section.settings.button_label }}</a>
-            {% endif %}
-         </p>
+         </div>
+         {% if section.settings.button_label %}
+            <a href="{{ section.settings.button_link }}" class="button is-secondary">{{ section.settings.button_label }}</a>
+         {% endif %}
         </div>
       </div>
    </div>

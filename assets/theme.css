@@ -118,15 +118,17 @@
 /* Section Header */
 #section-header .sh-wrap * { display: inline; }
 #section-header .sh-wrap h3 { font-size: 30px; font-weight: 800; text-transform: uppercase; }
-#section-header .sh-wrap p { font-size: 30px; color: #fff; text-transform: uppercase; letter-spacing: 2px; background-color: var(--is-primary); padding: 5px 10px; margin-right: 15px; font-weight: 800; }
+#section-header .sh-wrap p { font-size: 30px; color: #fff; text-transform: uppercase; letter-spacing: 2px; background-color: var(--is-primary); padding: 5px 10px; margin-right: 10px; font-weight: 800; }
 
 /* Cat Grid */
 #catgrid .catwrap { position: relative; overflow: hidden; }
 #catgrid .catwrap .caption { position: absolute; width: 100%; height: 100%; top: 0; left: 0; display: flex; flex-direction: column; justify-content: center; padding: 20px; }
+#catgrid .has-text-centered .caption { width: 100% !important; }
 #catgrid .has-text-centered .caption .bttn.is-primary { margin: 25px auto 0px; } 
 #catgrid .catwrap .caption .bttn.is-primary { padding: 15px 25px; background-color: var(--is-primary); margin-top: 25px; width: fit-content; width: -moz-fit-content; color: #fff; text-transform: uppercase; font-weight: 600; }
+#catgrid .catwrap .caption p { font-size: 15px; text-transform: uppercase; }
 #catgrid .catwrap .caption p, #catgrid .catwrap .caption h3 { color: #fff !important; } 
-#catgrid .catwrap .caption h3 { font-size: 28px; font-weight: 600; }
+#catgrid .catwrap .caption h3 { font-size: 35px; font-weight: 800; text-transform: uppercase; }
 #catgrid .has-gradient .caption { background: -moz-linear-gradient(top,  rgba(0,0,0,0) 0%, rgba(0,0,0,0) 43%, rgba(0,0,0,0.40) 100%); background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0) 43%,rgba(0,0,0,0.40) 100%); background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,0) 43%,rgba(0,0,0,0.40) 100%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#59000000',GradientType=0 ); }
 
 #catgrid .catwrap img { transition: all 0.2s; display: block; max-height: 100%; min-width: 100%; }
@@ -158,7 +160,7 @@
 /* Image with Text Banner */
 #herobanner { background-size: cover; }
 #herobanner .txt-wrap { width: 100%; max-width: 650px; }
-#herobanner .txt-wrap h1 { text-transform: uppercase; font-size: 35px; font-weight: 400; color: #fff; letter-spacing: 2px; line-height: 1; padding-bottom: 20px; }
+#herobanner .txt-wrap h1 { text-transform: uppercase; font-size: 35px; font-weight: 800; color: #fff; letter-spacing: 2px; line-height: 1.5; margin-bottom: 0px !important; }
 #herobanner .txt-wrap p { color: #fff; font-size: 14px; letter-spacing: 0.5px; line-height: 2; }
 #herobanner .txt-wrap .button.is-secondary { text-transform: uppercase; font-size: 14px; letter-spacing: 2px; padding: 25px !important; border-radius: 30px !important; border: none !important; margin-top: 15px; }
 
@@ -181,7 +183,7 @@
 
 /* Product Thumbnail */
 .card.product-grid-item { box-shadow: none; border: 1px solid #eee; }
-.card.product-grid-item .card-image { max-height: 290px !important; overflow: hidden; border: 5px solid var(--is-primary); }
+.card.product-grid-item .card-image { max-height: 290px !important; overflow: hidden; }
 .card.product-grid-item .card-image img { margin: auto; height: 100% !important; }
 .card.product-grid-item .card-content { background-color: #fff !important; }
 .card.product-grid-item .card-content .title { font-size: 15px; letter-spacing: 1px; margin-bottom: -15px !important; text-transform: uppercase; }
