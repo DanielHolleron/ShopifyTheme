@@ -180,7 +180,7 @@
         "settings": {
           "catrow_classes": "my-3",
           "cat_height": "",
-          "has_button": false
+          "has_button": true
         }
       },
       "0ed3085d-1b87-4d8b-a626-1f68510b9d30": {
