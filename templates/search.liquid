@@ -1,0 +1,91 @@
+{% comment %}
+   The template for the search page.
+{% endcomment %}
+
+
+{% paginate search.results by 10 %}
+
+
+<div class="section section-search">
+   <div class="container">
+
+      <div class="has-text-centered">
+         {% if search.performed == false %}
+            <h1 class="title is-3">{{ 'general.search.title' | t }}</h1>
+         {% else %}
+            <h1 class="title is-3">
+               <span class="visually-hidden">{{ 'general.search.heading' | t: count: search.results_count }}:</span>
+               {{ 'general.search.results_with_count' | t: terms: search.terms, count: search.results_count }}
+            </h1>
+         {% endif %}
+
+
+         {% if search.performed and search.results_count == 0 %}
+            <div class="rte search--no-results-found">
+               <p>{{ 'general.search.no_results' | t }}</p>
+            </div>
+         {% endif %}
+
+         <form action="{{ routes.search_url }}" method="get" role="search" class="search-form search-page-form level">
+
+            <input type="hidden" name="options[prefix]" value="last" aria-hidden="true" />
+
+            <div class="field search-field has-addons">
+               <div class="control is-expanded">
+                  <input class="input"
+                        type="search"
+                        name="q"
+                        value="{{ search.terms | escape }}"
+                        aria-autocomplete="list"
+                        aria-owns="predictive-search-results"
+                        aria-expanded="false"
+                        aria-label="{{ 'general.search.placeholder' | t }}"
+                        aria-haspopup="listbox"
+                        data-search-page-predictive-search-input
+                        data-base-url="{{ routes.search_url }}"
+                        placeholder="{{ 'general.search.placeholder' | t }}" />
+               </div>
+               <div class="control">
+                  <button type="submit" class="button is-info"
+                        aria-label="{{ 'general.search.submit' | t }}"
+                        data-search-page-predictive-search-submit>
+                        <i class="fas fa-search"></i>
+                  </button>
+               </div>
+            </div>
+
+         </form>
+
+      </div> <!-- .box -->
+   
+
+      {% if search.performed %}
+         {% if search.results_count > 0 %}
+            <hr aria-hidden="true" />
+         {% endif %}
+         
+         <h2 class="is-hidden">{{ 'general.search.heading' | t: count: search.results_count }}</h2>
+
+         <div id="Collection" class="product-grid columns is-multiline">
+            {% for item in search.results %}
+               {% if item.object_type == 'product' %}
+                  <div class="column is-3-desktop grid__item {{ grid_item_width }}">
+                     {% include 'product-card-grid', max_height: max_height, product: item, show_vendor: section.settings.show_vendor %}
+                  </div>
+               {% endif %}
+            {% endfor %}
+         </div>
+
+         {%- if paginate.pages > 1 -%}
+            {% include 'pagination', paginate: paginate %}
+         {%- endif -%}
+      {% endif %}
+
+      {% if search.results_count < 2  %}
+         <div class="search--less-than-2-results"></div>
+      {% endif %}
+
+   </div> <!-- .container -->
+</div> <!-- .section -->
+
+{% endpaginate %}

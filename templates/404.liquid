@@ -1,0 +1,24 @@
+{% comment %}
+   Template used when no page was found.
+{% endcomment %}
+
+<div class="section section-404">
+
+   <div class="container">
+
+      <div class="has-text-centered">
+         <h1 class="title is-3">{{ 'general.404.title' | t }}</h1>
+         <p>{{ 'general.404.subtext' | t }}</p>
+         <p class="mt-3">
+            <a href="{{ routes.root_url }}" class="button">
+               <span>{{ 'general.404.link' | t }}</span>
+               <span class="icon">
+                  <i class="fas fa-angle-right"></i>
+               </span>
+            </a>
+         </p>
+      </div>
+
+   </div>
+
+</div>

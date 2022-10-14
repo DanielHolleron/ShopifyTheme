@@ -1,0 +1,99 @@
+{% if section.settings.show_topbar %}
+<div id="topbar" class="{% if section.settings.topbar_class %} {{ section.settings.topbar_class }} {% endif %}">
+    <div class="container">
+        <div class="columns">
+            {% if section.settings.show_topmssg %}
+                <div class="column">
+                  <div class="messagegroup">
+                    <div class="message-wrap">
+                        <p>{{ section.settings.topbarmssg_1 }}</p>
+                    </div>
+                    <div class="message-wrap">
+                      <p>{{ section.settings.topbarmssg_2 }}</p>
+                    </div>
+                    <div class="message-wrap">
+                      <p>{{ section.settings.topbarmssg_3 }}</p>
+                    </div>
+                  </div>
+          		</div>
+            {% endif %}
+            {% if section.settings.show_topmenu %}
+                <div class="column is-hidden-touch">
+                    <div class="navbar-wrap">
+                        <div class="navbar-end">
+      
+                           {%- assign header_linklist = section.settings.top_menu -%}
+                           {%- for link in linklists[header_linklist].links -%}
+                              <p class="navbar-item">
+                                 <a href="{{ link.url }}" {% if link.current %} aria-current="page"{% endif %}>
+                                    {{ link.title | escape }}
+                                 </a>
+                              </p>
+                           {%- endfor -%}
+                           
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Top Bar",
+  "settings": [
+        {
+            "type": "checkbox",
+            "id": "show_topbar",
+            "label": "Show Top Bar",
+            "default": true
+        },  
+        {
+            "id": "topbar_class",
+            "type": "text",
+            "label": "Top Bar Class",
+            "default": "is-primary py-3"
+        },
+        {
+            "type": "checkbox",
+            "id": "show_topmssg",
+            "label": "Show Welcome Message",
+            "default": true
+        },  
+        {
+            "type": "checkbox",
+            "id": "show_topmenu",
+            "label": "Show Top Bar Menu",
+            "default": false
+        }, 
+        {
+            "id": "topbarmssg_1",
+            "type": "text",
+            "label": "Top Bar Message 1"
+        },
+		{
+            "id": "topbarmssg_2",
+            "type": "text",
+            "label": "Top Bar Message 2"
+        },
+		{
+            "id": "topbarmssg_3",
+            "type": "text",
+            "label": "Top Bar Message 3"
+        },
+        {
+            "type": "link_list",
+            "id": "top_menu",
+            "label": { "en": "Top Bar Menu" }
+        }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

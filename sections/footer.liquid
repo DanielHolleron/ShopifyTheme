@@ -1,0 +1,206 @@
+<!-- Footer Goes Here!! -->
+
+<div class="section section-footer pb-6">
+   <div class="container">
+
+      <div class="columns">
+         {% if section.settings.footerlogo_column %}
+            <div class="column is-3">
+               <div class="footer-logo">
+                  <img src="{{ 'logo.png' | asset_url }}" class="img-responsive"/>
+               </div>
+               <div class="footer-blurb">
+                  <p>{{ section.settings.footer_blurb }}</p>
+               </div>
+            </div>
+         {% endif %}
+         {% if section.settings.footermenu_1 %}
+            <div class="column">
+            	<div class="footermenu">
+                   <h5 class="is-5 mb-4">{{ section.settings.menutitle_1 }}</h5>
+                   <div class="menu">
+                      {%- assign footer_linklist = section.settings.menu_1 -%}
+                      {%- for link in linklists[footer_linklist].links -%}
+                         <p class="menu-label">
+                            <a href="{{ link.url }}" {% if link.current %} aria-current="page"{% endif %}>
+                               {{ link.title | escape }}
+                            </a>
+                         </p>
+                      {%- endfor -%}
+                   </div>
+            	</div>
+            </div> <!-- .column -->
+         {% endif %}
+         {% if section.settings.footermenu_2 %}
+            <div class="column">
+            	<div class="footermenu">
+                   <h5 class="is-5 mb-4">{{ section.settings.menutitle_2 }}</h5>
+                   <div class="menu">
+                      {%- assign footer_linklist = section.settings.menu_2 -%}
+                      {%- for link in linklists[footer_linklist].links -%}
+                         <p class="menu-label">
+                            <a href="{{ link.url }}" {% if link.current %} aria-current="page"{% endif %}>
+                               {{ link.title | escape }}
+                            </a>
+                         </p>
+                      {%- endfor -%}
+                   </div>
+            	</div>
+            </div> <!-- .column -->
+         {% endif %}
+         {% if section.settings.footermenu_3 %}
+            <div class="column">
+            	<div class="footermenu">
+                   <h5 class="is-5 mb-4">{{ section.settings.menutitle_3 }}</h5>
+                   <div class="menu">
+                      {%- assign footer_linklist = section.settings.menu_3 -%}
+                      {%- for link in linklists[footer_linklist].links -%}
+                         <p class="menu-label">
+                            <a href="{{ link.url }}" {% if link.current %} aria-current="page"{% endif %}>
+                               {{ link.title | escape }}
+                            </a>
+                         </p>
+                      {%- endfor -%}
+                   </div>
+            	</div>
+            </div> <!-- .column -->
+         {% endif %}
+         {% if section.settings.has_newsletter %}
+            <div class="column">
+               <h5 class="is-5 mb-4">Newsletter</h5>
+               {%- assign formId = 'Contact_' | append: section.id -%}
+               {% form 'customer', id: formId, novalidate: 'novalidate', class: 'contact-form form-single-field' %}
+                  <input type="hidden" name="nl" />
+                  <div class="field has-addons">
+                     <p class="control is-expanded">
+                        <input class="input" type="text" placeholder="Email addreess">
+                     </p>
+                     <p class="control">
+                        <button class="button">Subscribe</button>
+                     </p>
+                  </div>
+
+                  {%- if form.posted_successfully? -%}
+                     <div id="{{ formId }}-email-error" class="notification is-success" tabindex="-1" data-form-status>
+                        {{ 'general.newsletter_form.confirmation' | t }}
+                     </div>
+                  {%- endif -%}
+
+                  {%- if form.errors contains 'email' -%}
+                     {{ form.id | json }}
+                     <div id="{{ formId }}-email-error" class="notification is-danger">
+                        <span>{{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}.</span>
+                     </div>
+                  {%- endif -%}
+               {% endform %}
+
+            </div> <!-- .column -->
+         {% endif %}
+      </div> <!-- .columns -->
+      
+   </div> <!-- .container -->
+</div> <!-- .section -->
+
+
+<div id="footerbottom" class="section section-copy py-5">
+   <div class="container">
+      <div class="level">
+         <div class="level-left">Copyright Alpha Supplements 2022</div>
+         <div class="level-right">
+            <p>Built by Jarilo Design</p>
+         </div>
+      </div>      
+    </div> <!-- .container -->
+</div> <!-- .section -->
+
+{% schema %}
+{
+   "name": { "en": "Footer" },
+   "max_blocks": 1,
+   "settings": [
+      {
+         "type": "header",
+         "content": { "en": "Quick Links" },
+         "info": { "en": "Link list that appears in the footer." }
+      },
+      {
+         "type": "checkbox",
+         "id": "footerlogo_column",
+         "label": "Logo Column",
+         "default": true,
+         "info": "Hides or Displays the Logo Column"
+      },        
+      {
+			"id": "footer_blurb",
+			"type": "text",
+         "label": "Footer Blurb",
+         "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris gravida nisl sit amet eleifend maximus. Sed tincidunt, lectus eu viverra ullamcorper."
+		},
+      {
+         "type": "checkbox",
+         "id": "footermenu_1",
+         "label": "Footer Menu 1",
+         "default": false,
+         "info": "Hides or Displays Menu 1"
+      },      
+      {
+			"id": "menutitle_1",
+			"type": "text",
+         "label": "Menu Title 1",
+         "default": "Quick Links"
+		},
+      {
+         "type": "link_list",
+         "id": "menu_1",
+         "label": { "en": "Menu 1" },
+         "default": "footer"
+      },
+      {
+         "type": "checkbox",
+         "id": "footermenu_2",
+         "label": "Footer Menu 2",
+         "default": false,
+         "info": "Hides or Displays Menu 2"
+      },
+      {
+			"id": "menutitle_2",
+			"type": "text",
+         "label": "Menu Title 2",
+         "default": "Quick Links"
+		},
+      {
+         "type": "link_list",
+         "id": "menu_2",
+         "label": { "en": "Menu 2" },
+         "default": "footer"
+      },
+      {
+         "type": "checkbox",
+         "id": "footermenu_3",
+         "label": "Footer Menu 3",
+         "default": false,
+         "info": "Hides or Displays Menu 3"
+      },
+      {
+			"id": "menutitle_3",
+			"type": "text",
+         "label": "Menu Title 3",
+         "default": "Quick Links"
+		},
+      {
+         "type": "link_list",
+         "id": "menu_3",
+         "label": { "en": "Menu 3" },
+         "default": "footer"
+      },
+      {
+         "type": "checkbox",
+         "id": "has_newsletter",
+         "label": "Newsletter",
+         "default": false,
+         "info": "Hides or Displays the Newsletter"
+      }
+   ],
+   "blocks": []
+}
+{% endschema %}

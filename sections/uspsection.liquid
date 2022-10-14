@@ -1,0 +1,85 @@
+<div id="usp-section" {% if section.settings.usp_row_classes %}class="{{ section.settings.usp_row_classes }}"{% endif %}>
+	<div class="container">
+	  <div class="columns">
+		{% for block in section.blocks %} 
+			{% if block.settings.uspimg %}
+				<div class="column {% if section.settings.usp_column_class %} {{ section.settings.usp_column_class }} {% endif %}">
+					<div class="uspwrap">
+						<div class="uspbox {% if section.settings.usp_box_class %} {{ section.settings.usp_box_class }} {% endif %}">
+							<div class="usp-img p-2">
+								<img src="{{ block.settings.uspimg | img_url: 'original' }}">
+							</div>
+							<div class="usp-txt">
+								<h4>{{ block.settings.usp_title }}</h4>
+								<p>{{ block.settings.usp_subtitle }}</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			{% endif %}
+		 {% endfor %}
+	  </div>
+	</div>
+  </div>
+  
+  
+{% schema %}
+	{
+	"name": "USP section",
+			"max_blocks": 6,
+	"settings": [
+		{
+			"id": "usp_row_classes",
+			"type": "text",
+			"label": "USP Row Class"
+		},
+		{
+			"id": "usp_column_class",
+			"type": "text",
+			"label": "USP Column Class"
+		},
+		{
+			"id": "usp_box_class",
+			"type": "text",
+			"label": "USP Box Class"
+		}		
+	],
+	"blocks": [
+		{
+			"type": "select",
+			"name": "Brand Box",
+			"settings": [
+				{
+					"id": "uspimg",
+					"type": "image_picker",
+					"label": "USP Image"
+				},
+				{
+					"id": "usp_title",
+					"type": "text",
+					"label": "USP Title",
+					"default": "USP Title"
+				},
+				{
+					"id": "usp_subtitle",
+					"type": "text",
+					"label": "USP Sub-Title",
+					"default": "USP Sub-Title"
+				}
+			]
+		}
+	],
+	"presets": [
+		{
+		  "name": "USP section",
+		  "category": "Sections"
+		}
+	  ]
+	}
+  {% endschema %}
+  
+  {% stylesheet %}
+  {% endstylesheet %}
+  
+  {% javascript %}
+  {% endjavascript %}

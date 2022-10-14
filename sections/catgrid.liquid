@@ -1,0 +1,105 @@
+<div id="catgrid" {% if section.settings.catrow_classes %}class="{{ section.settings.catrow_classes }}"{% endif %}>
+  <div class="container">
+    <div class="columns is-multiline is-mobile">
+      {% for block in section.blocks %} 
+        {% if block.settings.catimg %}
+          <div {% if block.settings.cat-class %}class="{{ block.settings.cat-class }}"{% endif %}>
+            <a href="{{ block.settings.fullcat-link.url }}">
+              <div class="catwrap" {% if section.settings.cat_height %}style="max-height:{{ section.settings.cat_height}};"{% endif %}>
+                <img src="{{ block.settings.catimg | img_url: 'original' }}">
+                <div class="caption">
+                  <p>{{ block.settings.fullcat_sub }}</p>
+                  <h3>{{ block.settings.fullcat_title }}</h3>
+                  {% if section.settings.has_button %}
+                    <div class="bttn is-primary">
+                        {{ block.settings.button_text }}
+                    </div>
+                  {% endif %}
+                </div>
+              </div>
+            </a>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Cat Boxes",
+            "max_blocks": 4,
+    "settings": [
+		{
+			"id": "catrow_classes",
+			"type": "text",
+			"label": "Category Row Classes"
+    },
+    {
+			"id": "cat_height",
+			"type": "text",
+			"label": "Cat Box Height"
+    },
+    {
+			"id": "has_button",
+			"type": "checkbox",
+      "label": "Show Buttons",
+      "default": false
+    }
+  ],
+  "blocks": [
+      {
+        "type": "select",
+        "name": "Cat Box",
+        "settings": [
+            {
+              "id": "cat-class",
+              "type": "text",
+              "label": "Cat Classes",
+              "default": "column"
+            },
+            {
+              "id": "fullcat-link",
+              "type": "url",
+              "label": "Cat Link"
+            },
+            {
+              "id": "catimg",
+              "type": "image_picker",
+              "label": "Cat Image"
+            },
+            {
+              "type": "text",
+              "id": "fullcat_sub",
+              "label": "Cat Subtitle",
+              "default": "Check Out Our Range of"
+            },
+            {
+              "type": "text",
+              "id": "fullcat_title",
+              "label": "Cat Title",
+              "default": "Testing Category"
+            },
+            {
+              "type": "text",
+              "id": "button_text",
+              "label": "Button Text",
+              "default": "Shop Now"
+            }
+        ]
+      }
+  ],
+	"presets": [
+      {
+        "name": "Cat Boxes",
+        "category": "Sections"
+      }
+	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

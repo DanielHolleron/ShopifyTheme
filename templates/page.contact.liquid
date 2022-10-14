@@ -1,0 +1,81 @@
+{% comment %}
+   The template for the contact page.
+{% endcomment %}
+
+
+<div class="section">
+   <div class="container">
+
+
+      <div class="has-text-centered">
+         <h1 class="title is-3">{{ page.title }}</h1>
+         {% if page.content.size > 0 %}
+            <div class="content mb-6">{{ page.content }}</div>
+         {% endif %}
+      </div>
+
+
+      {%- assign formId = 'ContactForm' -%}
+      {% form 'contact', id: formId, class: 'form' %}
+         {% include 'form-status', form: form, form_id: formId %}
+
+
+         <div class="columns">
+            <div class="column">
+               <div class="field">
+                  <label for="{{ formId }}-name">{{ 'contact.form.name' | t }}</label>
+                  <div class="control">
+                     <input class="input" type="name"
+                            id="{{ formId }}-name" name="contact[{{ 'contact.form.name' | t }}]"
+                            value="{% if form[name] %}{{ form[name] }}{% elsif customer %}{{ customer.name }}{% endif %}" />
+                  </div>
+               </div> <!-- .field -->
+            </div> <!-- .column -->
+            <div class="column">
+               <div class="field">
+                  <label for="{{ formId }}-email">{{ 'contact.form.email' | t }} <span aria-hidden="true">*</span></label>
+                  <div class="control">
+                     <input class="input" type="email"
+                            id="{{ formId }}-email" name="contact[email]"
+                            autocorrect="off" autocapitalize="off"
+                            value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
+                            aria-required="true" />
+                  </div>
+               </div> <!-- .field -->
+            </div> <!-- .column -->
+         </div> <!-- .columns -->
+
+
+         <div class="columns">
+            <div class="column">
+               <div class="field">
+                  <label for="{{ formId }}-phone">{{ 'contact.form.phone' | t }}</label>
+                  <div class="control">
+                     <input class="input" type="tel" id="{{ formId }}-phone"
+                            name="contact[{{ 'contact.form.phone' | t }}]"
+                            pattern="[0-9\-]*" value="{% if form[phone] %}{{ form[phone] }}{% elsif customer %}{{ customer.phone }}{% endif %}" />
+                  </div>
+               </div> <!-- .field -->
+            </div> <!-- .column -->
+         </div> <!-- .columns -->
+
+
+         <div class="columns">
+            <div class="column">
+               <div class="field">
+                  <label for="{{ formId }}-message">{{ 'contact.form.message' | t }}</label>
+                  <div class="control">
+                     <textarea class="textarea" rows="10" id="{{ formId }}-message" name="contact[{{ 'contact.form.message' | t }}]">{% if form.body %}{{ form.body }}{% endif %}</textarea>
+                  </div>
+               </div> <!-- .field -->
+            </div> <!-- .column -->
+         </div> <!-- .columns -->
+
+
+         <input type="submit" class="button is-primary" value="{{ 'contact.form.submit' | t }}" />
+
+
+      {% endform %}
+
+   </div> <!-- .container -->
+</div> <!-- .section -->

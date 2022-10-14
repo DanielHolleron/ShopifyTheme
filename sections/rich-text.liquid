@@ -1,0 +1,61 @@
+<div class="section">
+    <div class="container mb-6">
+   
+        {% if section.settings.section_title != blank %}
+            <h4 class="title is-4">{{ section.settings.section_title | escape }}</h4>
+        {% endif %}
+        {% if section.settings.text != blank %}
+            <div class="content">{{ section.settings.text }}</div>
+        {% endif %}
+      
+   </div>
+</div>
+
+
+
+{% schema %}
+{
+    "name": { "en": "Rich text" },
+    "class": "index-section",
+    "settings": [
+        {
+            "type": "text",
+            "id": "section_title",
+            "label": { "en": "Heading" },
+            "default": { "en": "Talk about your brand" }
+        },
+        {
+            "type": "richtext",
+            "id": "text",
+            "label": { "en": "Text" },
+            "default": { "en": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>" }
+        },
+        {
+            "type": "select",
+            "id": "text_size",
+            "label": { "en": "Size" },
+            "default": "medium",
+            "options": [
+                {
+                    "label": { "en": "Small" },
+                    "value": "small"
+                },
+                {
+                    "label": { "en": "Medium" },
+                    "value": "medium"
+                },
+                {
+                    "label": { "en": "Large" },
+                    "value": "large"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": { "en": "Rich text" },
+            "category": { "en": "Text" }
+        }
+    ]
+}
+{% endschema %}

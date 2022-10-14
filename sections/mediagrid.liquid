@@ -1,0 +1,82 @@
+<div id="mediagrid" {% if section.settings.mediarow_classes %}class="{{ section.settings.mediarow_classes }}"{% endif %}>
+    <div class="container">
+        <div class="columns">
+            {% for block in section.blocks %} 
+                {% if block.settings.med_col == 'nothing' %}
+                {% else %}
+                    <div class="column {% if block.settings.medcol_classes %}{{ block.settings.medcol_classes }}{% endif %}">
+                        <div class="element-wrap">
+                            {% if block.settings.med_col == 'aboutusblock' %}
+                                {% render 'aboutblock' %}
+                            {% endif %}
+                            {% if block.settings.med_col == 'contactusblock' %}
+                                {% render 'contactblock' %}
+                            {% endif %}
+                            {% if block.settings.med_col == 'googlemapblock' %}
+                                {% render 'mapblock' %}
+                            {% endif %}
+                            {% if block.settings.med_col == 'mediapromoblock' %}
+                                {% render 'mediapromo' %}
+                            {% endif %}
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% schema %}
+{
+   "name": { "en": "Media Widget" },
+            "max_blocks": 4,
+   "settings": [
+        {
+            "id": "mediarow_classes",
+            "type": "text",
+            "label": "Media Row Classes"
+        },
+        {
+            "id": "aboutblock_text",
+            "type": "richtext",
+            "label": "About Block Text"
+        },
+        {
+            "id": "promoimg",
+            "type": "image_picker",
+            "label": "Promo Image"
+        }
+    ],
+    "blocks": [
+        {
+            "type": "select",
+            "name": "Media Box",
+            "settings": [
+                {
+                    "type": "select",
+                    "id": "med_col",
+                    "options": [
+                        { "value": "nothing", "label": "Nothing"},
+                        { "value": "aboutusblock", "label": "About Us Block"},                
+                        { "value": "contactusblock", "label": "Contact Us Block"},
+                        { "value": "googlemapblock", "label": "Map"},
+                        { "value": "mediapromoblock", "label": "Promo Block"}
+                    ],
+                    "label": "Column Content"
+                },
+                {
+                    "id": "medcol_classes",
+                    "type": "text",
+                    "label": "Column Classes"
+                }
+            ]
+        }
+    ],
+   "presets": [
+      {
+         "name": { "en": "Media Widget" },
+         "category": { "en": "Widgets" }
+      }
+   ]
+}
+{% endschema %}

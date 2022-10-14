@@ -1,0 +1,167 @@
+<style>#header .navbar-wrap .navbar-item::before, #topbar .navbar-end .navbar-item::before { background: url('{{ 'menubg.png' | asset_url }}'); }</style>
+
+<nav id="header" class="bd-navbar has-shadow is-spaced py-4 px-3" role="navigation" aria-label="main navigation">
+   
+   <div class="container">
+
+      <div class="columns is-mobile is-multiline">
+         <div class="column {% if section.settings.logowrap_class %} {{ section.settings.logowrap_class }} {% endif %}">            
+            <div class="navbar-brand">
+               <a class="navbar-item site-logo" href="{{ routes.root_url }}">      
+                  {% if section.settings.logo_image != blank %}
+                     <img src="{{ section.settings.logo_image | img_url }}"/>
+                  {% else %}
+                     <img src="{{ 'logo.png' | asset_url }}" class="img-responsive"/>
+                  {% endif %}
+                  <!-- img src="https://bulma.io/images/bulma-logo.png" width="112" height="28" -->      
+               </a>
+            </div>            
+         </div>
+         {% if section.settings.has_header_menu %}
+            <div class="column is-hidden-touch {% if section.settings.headermenu_class %} {{ section.settings.headermenu_class }} {% endif %}">
+               <div class="navbar-wrap">
+                  <div class="navbar-start">
+
+                     {%- assign header_linklist = section.settings.header_menu -%}
+                     {%- for link in linklists[header_linklist].links -%}
+                        <p class="navbar-item">
+                           <a href="{{ link.url }}" {% if link.current %} aria-current="page"{% endif %}>
+                              {{ link.title | escape }}
+                           </a>
+                        </p>
+                     {%- endfor -%}
+                     
+                  </div>
+               </div>
+            </div>
+         {% endif %}
+         {% if section.settings.show_search %}
+            <div class="column is-hidden-touch {% if section.settings.search_class %} {{ section.settings.search_class }} {% endif %}">
+               <div class="search-wrap">
+                  <div class="searchbar">
+                     <form class="form-inline my-2 my-lg-0" action="{{ '/search' }}" method="GET">                     
+                        <input class="form-control" type="search" name="q" placeholder="Search" aria-label="Search" value="{{ search.terms | escape }}">
+                        <button class="btn btn-outline-info" type="submit"><i class="fas fa-search"></i></button>                     
+                     </form>
+                  </div>
+               </div>
+            </div>
+         {% endif %}
+         <div class="column {% if section.settings.basket_class %} {{ section.settings.basket_class }} {% endif %}">
+            <div id="main-navigation">         
+               <div class="navbar-end">
+                  <div class="navbar-item">
+                     <div class="buttons">
+                       	<a class="nav_bttn button is-primary bttn" role="button" aria-label="menu" aria-expanded="false" data-target="menumobile" data-sticky="true"><i class="fas fa-bars"></i></a>
+                        
+                           {% if customer %}
+                           <a href="{{ routes.account_url }}" class="button is-primary bttn site-header__account">
+                              <i class="fas fa-user"></i>
+                           </a>
+                           {% else %}
+                           <a href="{{ routes.account_login_url }}" class="button is-primary bttn site-header__account">
+                              <i class="fas fa-user"></i>
+                           </a>
+                           {% endif %}
+                       
+                       <a class="button is-primary bttn" href="{{ routes.cart_url }}"><i class="fas fa-shopping-basket"></i></a>
+      
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div> 
+    
+  </div>
+
+</nav>
+
+<div id="promobar" class="is-primary p-4">
+  <div class="container">
+  	<div class="level px-2">
+      <div class="level-left">
+        <div class="promobar_item">
+          Try Discount Code: NEWSITE
+        </div>
+      </div>
+      <div class="level-item">
+        <div class="promobar_item">
+          Official UK Stockest of Applied Nutrition
+        </div>
+      </div>
+      <div class="level-right is-hidden-mobile">
+        <div class="promobar_item">
+          Free UK Shipping
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% if section.settings.show_search %}
+  <div id="searchmob" class="is-hidden-desktop">
+    <div class="search-wrap">
+      <div class="searchbar">
+        <form class="form-inline" action="{{ '/search' }}" method="GET">                     
+          <input class="form-control" type="search" name="q" placeholder="Search" aria-label="Search" value="{{ search.terms | escape }}">
+          <button class="btn btn-outline-info" type="submit"><i class="fas fa-search"></i></button>                     
+        </form>
+      </div>
+    </div>
+  </div>
+{% endif %}
+
+
+{% schema %}
+{
+   "name": { "en": "Header" },
+   "max_blocks": 1,
+   "settings": [
+	   {
+         "type": "checkbox",
+         "id": "has_header_menu",
+         "label": "Header Menu",
+         "default": true
+      },  
+      {
+         "type": "checkbox",
+         "id": "show_search",
+         "label": "Search Bar",
+         "default": false
+      },  
+      {
+         "id": "logowrap_class",
+         "type": "text",
+         "label": "Logo Wrap Classes"
+      },
+      {
+         "id": "logo_image",
+         "type": "image_picker",
+         "label": "Logo Image"
+      },
+      {
+         "id": "headermenu_class",
+         "type": "text",
+         "label": "Header Menu Classes"
+      },
+      {
+         "type": "link_list",
+         "id": "header_menu",
+         "label": { "en": "Header Menu" },
+         "default": "footer"
+      },
+      {
+         "id": "search_class",
+         "type": "text",
+         "label": "Search Bar Classes"
+      },
+      {
+         "id": "basket_class",
+         "type": "text",
+         "label": "Basket Classes"
+      }
+   ],
+   "blocks": []
+}
+{% endschema %}

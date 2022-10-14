@@ -1,0 +1,43 @@
+<div id="section-header" {% if section.settings.sh_classes %}class="{{ section.settings.sh_classes }}"{% endif %}>
+    <div class="container sh-wrap">
+        <p>{{ section.settings.sh_pre }}</p>
+        <h3>{{ section.settings.sh_title }}</h3>
+    </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Section Header",
+    "settings": [
+		{
+			"id": "sh_classes",
+			"type": "text",
+			"label": "Section Header Classes"
+        },
+        {
+			"id": "sh_pre",
+			"type": "text",
+            "label": "Section Header Pre-Title",
+            "default": "Check Out Our"
+        },
+        {
+			"id": "sh_title",
+			"type": "text",
+            "label": "Section Header Title",
+            "default": "Featured Content"
+        }
+	],
+	"presets": [
+      {
+        "name": "Section Header",
+        "category": "Sections"
+      }
+	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

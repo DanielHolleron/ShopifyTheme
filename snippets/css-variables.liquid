@@ -1,0 +1,21 @@
+{% comment %}
+  This is used to create CSS custom variables with Liquid references
+  The file variables.scss is referring these CSS custom variables as Sass variables
+  to use throughout the stylesheet
+{% endcomment %}
+{% style %}
+  {%- assign header_font = settings.type_header_font -%}
+  {%- assign base_font = settings.type_base_font -%}
+
+  :root {
+    --font-stack-base: {{ base_font.family }}, {{ base_font.fallback_families }};
+    --font-style-base: {{ base_font.style }};
+    --font-weight-base: {{ base_font.weight }};
+
+    --font-stack-header: {{ header_font.family }}, {{ header_font.fallback_families }};
+    --font-style-header: {{ header_font.style }};
+    --font-weight-header: {{ header_font.weight }};
+
+    --font_colour: {{ settings.color_text }};
+  }
+{% endstyle %}

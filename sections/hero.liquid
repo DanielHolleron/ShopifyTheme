@@ -1,0 +1,84 @@
+
+{%- assign img_url = section.settings.image | img_url: '1x1' | replace: '_1x1.', '_1920x.' -%}
+<section id="herobanner" style="background-image:url('{{ img_url }}'); color:{{ section.settings.text_colour }};" class="hero mt-6 is-bold is-medium background-{{ section.settings.alignment }}">
+   <div class="hero-body">
+      <div class="container">
+        <div class="txt-wrap">
+         <h1 class="title has-text-inherit">
+            {{ section.settings.title }}
+         </h1>
+         <p class="subtitle has-text-inherit">
+            {{ section.settings.text }}
+
+            {% if section.settings.button_label %}
+               <br />
+               <a href="{{ section.settings.button_link }}" class="button is-secondary">{{ section.settings.button_label }}</a>
+            {% endif %}
+         </p>
+        </div>
+      </div>
+   </div>
+</section>
+
+
+{% schema %}
+{
+  "name": { "en": "Image with text overlay" },
+  "class": "index-section index-section--flush",
+  "settings": [
+      {
+         "type": "image_picker",
+         "id": "image",
+         "label": { "en": "Image" }
+      },
+      {
+         "type": "select",
+         "id": "alignment",
+         "label": { "en": "Image alignment" },
+         "default": "center",
+         "options": [
+            { "value": "top", "label": { "en": "Top" } },
+            { "value": "center", "label": { "en": "Middle" } },
+            { "value": "bottom", "label": { "en": "Bottom" } }
+         ]
+      },
+      {
+         "type": "color",
+         "id": "text_colour",
+         "label": {
+           "en": "Text Colour"
+         },
+         "default": "#000"
+       },
+      {
+         "type": "text",
+         "id": "title",
+         "label": { "en": "Heading" },
+         "default": { "en": "Image with text overlay" }
+      },
+      {
+         "type": "richtext",
+         "id": "text",
+         "label": { "en": "Text" },
+         "default": {
+         "en": "<p>Use overlay text to give your customers insight into your brand. Select imagery and text that relates to your style and story.</p>" }
+      },
+      {
+         "type": "text",
+         "id": "button_label",
+         "label": { "en": "Button label" }
+      },
+      {
+         "type": "url",
+         "id": "button_link",
+         "label": { "en": "Button link" }
+      }
+  ],
+  "presets": [
+      {
+         "name": { "en": "Image with text overlay" },
+         "category": { "en": "Image" }
+      }
+  ]
+}
+{% endschema %}

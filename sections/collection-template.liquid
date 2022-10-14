@@ -1,0 +1,199 @@
+{% comment %}
+   Template used for collection pages, also used on /collections/frontpage, shows a list of 
+   products for a chosen collection.
+{% endcomment %}
+
+{% paginate collection.products by limit %}
+
+<div id="cat_start">
+   <div class="cat_start_wrap">
+      <header class="section-header has-text-centered bg-is-offwhite">
+         <span class="is-hidden">{{ 'collections.general.collection_label' | t }}: </span>
+         <div class="title_section container py-6">
+            <h1>{{ collection.title }}</h1>
+            {% if collection.description != blank %}
+               <div class="subtitle">
+                  {{ collection.description }}
+               </div>
+            {% endif %}
+         </div>
+
+         {% if is_filter_by_available or section.settings.sort_enable %}
+            <div id="filterbox" class="is-hidden-touch">
+               <div class="container">
+                  <div class="level py-3">
+                     <div class="level-left js-filter-form">
+
+                        {% if section.settings.tags_enable %}
+                           <div class="level-item">
+                              <label class="label" for="FilterTags">{{ 'collections.filters.title_tags' | t }}</label>
+                           </div>
+                           <div class="level-item">
+                              <div class="control">
+                                 <div class="select">
+                                    <select class="filters-toolbar__input is-static" name="FilterTags" id="FilterTags" 
+                                          aria-describedby="a11y-refresh-page-message a11y-selection-message" data-select-input>
+                                       <option value="{{ collection.url }}">{{ 'collections.filters.all_tags' | t }}</option>
+                                       {% for tag in collection.all_tags %}
+                                          {%- assign new_url = tag | link_to_tag: tag | split: 'href="' | last | split: '"' | first -%}
+                                          <option value="{{ new_url }}"{% if current_tags contains tag %} selected="selected"{% endif %}>{{ tag }}</option>
+                                       {% endfor %}
+                                    </select>
+                                 </div>
+                              </div>
+                           </div>
+                        {% endif %}
+
+
+                        {% if section.settings.sort_enable %}
+                           <div class="level-item">
+                              <label class="label" for="SortBy">{{ 'collections.sorting.title' | t }}</label>
+                           </div>
+                           <div class="level-item">
+                              {%- assign sort_by = collection.sort_by | default: collection.default_sort_by -%}
+                              <div class="control">
+                                 <div class="select">
+                                    <select name="sort_by" id="SortBy"
+                                       class="filters-toolbar__input is-static"
+                                       aria-describedby="a11y-refresh-page-message a11y-selection-message"
+                                       data-default-sortby="{{ collection.default_sort_by }}"
+                                       data-select-input>
+                                       {%- for option in collection.sort_options -%}
+                                          <option value="{{ option.value }}" {% if option.value == sort_by %}selected="selected"{% endif %}>{{ option.name }}</option>
+                                       {%- endfor -%}
+                                    </select>
+                                 </div>
+                              </div>
+                           </div>
+                        {% endif %}
+                       
+                       	<div class="level-item">
+                         	<div class="button commit_bttn is-primary py-2 px-4">
+                           	<p>Apply Filter</p>
+                         	</div>
+                       	</div>
+
+                     </div>
+                     <div class="level-right">
+                        <span class="filters-toolbar__product-count">{{ 'collections.general.items_with_count' | t: count: collection.products_count }}</span>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div id="filter_mob_trigger" class="is-hidden-desktop">
+               <a role="button" class="navbar-burger filter_bttn is-primary bttn px-5 py-4" aria-label="menu" aria-expanded="false" data-target="filtermobile">
+                  Filter / Sort By <i class="fas fa-filter"></i>
+               </a>
+            </div>
+         {% endif %}
+
+      </header>
+   </div>
+</div>
+
+<div class="section">
+
+   <div class="container">
+      <div class="columns">
+         <div class="column is-hidden-touch is-2">
+            <div id="leftmenu">
+               <div class="header is-primary py-3 px-4 mb-1">
+                  <p>Shop Categories</p>
+               </div>
+               <div class="catlist">
+                  <ul>
+                     {%- for collection in collections -%}                     
+                        <a href="{{ collection.url }}"><li class="catitem py-2 px-4 mb-1 bg-is-offwhite">{{ collection.title }}</li></a>                     
+                     {% endfor %}
+                  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="column">          
+            <div id="Collection" class="product-grid columns is-multiline">
+               {% for product in collection.products %}
+                  <div class="column is-3-desktop collection-{{section.id}} grid__item {{ grid_item_width }}">
+                     {% include 'product-card-grid', max_height: max_height, product: product, show_vendor: section.settings.show_vendor %}
+                  </div>
+               {% endfor %}
+            </div>
+      
+            {% if is_empty_collection %}
+               <div class="grid__item small--text-center">
+                  <p class="text-center">{{ 'collections.general.no_matches' | t }}</p>
+               </div>
+            {% endif %}
+      
+            {%- if paginate.pages > 1 -%}
+               {% include 'pagination', paginate: paginate %}
+            {%- endif -%}
+         </div>
+      </div>
+
+
+   </div>
+</div>
+
+
+{% endpaginate %}
+
+
+{% schema %}
+{
+  "name": { "en": "Collection pages" },
+  "settings": [
+    {
+      "type": "select",
+      "id": "layout",
+      "label": { "en": "Layout" },
+      "default": "grid",
+      "options": [
+        { "value": "grid", "label": { "en": "Grid" } },
+        { "value": "list", "label": { "en": "List" } }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "grid",
+      "label": { "en": "Products per row (grid only)" },
+      "default": 4,
+      "min": 2,
+      "max": 5,
+      "step": 1
+    },
+    {
+      "type": "range",
+      "id": "rows",
+      "label": { "en": "Rows per page (grid only)" },
+      "default": 2,
+      "min": 2,
+      "max": 8,
+      "step": 1
+    },
+    {
+      "type": "checkbox",
+      "id": "show_collection_image",
+      "label": { "en": "Show collection image" },
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_vendor",
+      "label": { "en": "Show product vendors" },
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "sort_enable",
+      "label": { "en": "Enable sorting" },
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "tags_enable",
+      "label": { "en": "Enable tag filtering" },
+      "default": true
+    }
+  ]
+}
+{% endschema %}

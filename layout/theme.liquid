@@ -1,0 +1,52 @@
+<!doctype html>
+<html class="no-js" lang="{{ request.locale.iso_code }}">
+<head>
+   <meta charset="utf-8" />
+   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+   <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+   <link rel="preconnect" href="https://cdn.shopify.com" crossorigin />
+   <link rel="preconnect" href="https://fonts.shopify.com" crossorigin />
+   <link rel="preconnect" href="https://monorail-edge.shopifysvc.com" />
+   <link rel="preload" href="{{ 'theme.css' | asset_url }}" as="style" />
+   <link rel="preload" href="{{ 'theme.js' | asset_url }}" as="script" />
+
+   <!-- glide -->
+	<script type="text/javascript" src="//cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+	<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css" />
+   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.theme.min.css" />
+
+   <!-- Tiny Slider -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.3/tiny-slider.css">
+
+   {% include 'header-common' %}
+
+   {{ content_for_header }}
+
+</head>
+<body class="template-{{ request.page_type | handle }}">
+  <style>:root { --is-primary: #00badb; --is-secondary: #0da7c2; }</style>
+  {% include 'mobile_menu' %}
+  {% include 'filter_mobile' %}
+  
+   <a class="in-page-link is-hidden skip-link" href="#MainContent">{{ 'general.accessibility.skip_to_content' | t }}</a>
+
+   {%- if settings.enable_ajax -%}
+      {% include 'cart-popup' %}
+   {%- endif -%}
+
+   {% section 'topbar' %}
+   {% section 'header' %}
+   {% include 'search-popup' %}
+
+   <div class="page-container">
+      <main class="main-content js-focus-hidden" id="MainContent" role="main" tabindex="-1">
+         {{ content_for_layout }}
+      </main>
+   </div>
+
+   {% section 'footer' %}
+
+</body>
+</html>

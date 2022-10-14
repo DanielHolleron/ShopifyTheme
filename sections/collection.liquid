@@ -1,0 +1,87 @@
+<div class="container mb-6 {% if section.settings.collection_class %} {{ section.settings.collection_class }} {% endif %}">
+  
+   {% if section.settings.title != blank %}
+      <h4 class="title is-4">{{ section.settings.title | escape }}</h4>
+   {% endif %}
+
+   {%- assign collection = collections[section.settings.collection] -%}
+   {%- assign product_limit = section.settings.grid | times: section.settings.rows -%}
+
+   <div class="product-grid columns is-multiline">
+      {% case section.settings.grid %}
+         {% when 2 %}
+            {% assign class = "is-6-desktop" %}
+         {% when 4 %}
+            {% assign class = "is-3-desktop" %}
+         {% when 5 %}
+            {% assign class = "is-25-desktop" %}
+         {% else %}
+            {% assign class = 'is-4-desktop' %}
+      {% endcase %}
+
+
+      {% for product in collection.products limit: product_limit %}
+         <div class="column {{ class }} product--{{section.id}}">
+            {% include 'product-card-grid', max_height: max_height, product: product, show_vendor: section.settings.show_vendor %}
+         </div>
+      {% endfor %}
+   </div>
+
+</div>
+
+
+
+{% schema %}
+{
+   "name": { "en": "Featured collection" },
+   "class": "index-section",
+   "settings": [
+      {
+         "type": "text",
+         "id": "title",
+         "label": { "en": "Heading" },
+         "default": { "en": "Featured collection" }
+      },
+      {
+         "type": "text",
+         "id": "collection_class",
+         "label": { "en": "Collection Class" }
+      },
+      {
+         "id": "collection",
+         "type": "collection",
+         "label": { "en": "Collection" }
+      },
+      {
+         "type": "range",
+         "id": "grid",
+         "label": { "en": "Products per row" },
+         "min": 2,
+         "max": 5,
+         "step": 1,
+         "default": 3
+      },
+      {
+         "type": "range",
+         "id": "rows",
+         "label": { "en": "Rows" },
+         "min": 1,
+         "max": 5,
+         "step": 1,
+         "default": 2
+      },
+      {
+         "type": "checkbox",
+         "id": "show_vendor",
+         "label": { "en": "Show product vendors" },
+         "default": false
+      }
+   ],
+   "presets": [
+      {
+         "name": { "en": "Featured collection" },
+         "category": { "en": "Collection" }
+      }
+   ]
+}
+{% endschema %}

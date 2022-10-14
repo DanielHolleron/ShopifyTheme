@@ -1,0 +1,42 @@
+{% comment %}
+   Renders a products from a collection
+   Accepts:
+   - collection: {Object} Collection Liquid object (required)
+   Usage:
+   {% include 'collection-grid-item', collection: collection %}
+{% endcomment %}
+
+
+{% if collection.image %}
+   {%- assign collection_image = collection.image -%}
+{% elsif collection.products.first and collection.products.first.media != empty %}
+   {%- assign collection_image = collection.products.first.featured_media.preview_image -%}
+{% else %}
+   {% assign collection_image = blank %}
+{% endif %}
+
+
+<a class="card is-block collection-grid-item" href="{% if collection.products == empty %}#{% else %}{{ collection.url }}{% endif %}">
+
+   <div class="card-image">
+      <figure class="image is-4by3">
+         <img src="{{ collection_image | img_url: '360x' }}" />
+      </figure>
+   </div>
+
+
+   <div class="card-content">
+      <div class="media">
+         <div class="media-content product-grid-item-desc">
+            <p class="title is-4">
+               {% if collection.title == blank %}
+                  {{ 'homepage.onboarding.collection_title' | t }}
+               {% else %}
+                  {{ collection.title }}
+               {% endif %}
+            </p>
+         </div>
+      </div>							
+   </div>
+
+</a>

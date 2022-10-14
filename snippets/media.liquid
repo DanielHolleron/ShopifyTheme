@@ -1,0 +1,42 @@
+{% capture media_id %}FeaturedMedia-{{ section.id }}-{{ media.id }}{% endcapture %}
+{% capture media_class %}product-featured-media{% endcapture %}
+{% capture media_wrapper_id %}{{ media_id }}-wrapper{% endcapture %}
+
+{%- comment -%}
+  Load different poster image sizes depending on the product layout
+{%- endcomment -%}
+{% capture image_size %}{{ height }}x{{ height }}{% endcapture %}
+
+
+<div class="product-single-media">
+
+   {% case media.media_type %}
+
+      {% when 'image' %}
+
+         {%- assign img_url = media | img_url: '1x1' | replace: '_1x1.', '_1000x.' -%}
+         <img id="{{ media_id }}"
+            class="feature-row__image {{ media_class }} lazyload{% unless featured_media == media %} lazypreload{% endunless %}"
+            src="{{ img_url }}"
+            data-widths="[180, 360, 540, 720, 900, 1080, 1296, 1512, 1728, 2048]"
+            data-aspectratio="{{ media.preview_image.aspect_ratio }}"
+            data-sizes="auto"
+            {% if enable_image_zoom %} data-image-zoom {% endif %}
+            alt="{{ media.alt | escape }}"
+            {% if featured_media == media and request.page_type == 'product' %} onload="window.performance.mark('debut:product:image_visible');"{% endif %}>
+
+      {% when 'external_video' %}
+      
+         <div class="product-single__media" style="padding-top: {{ 1 | divided_by: media.aspect_ratio | times: 100 }}%;">
+            {{ media | external_video_tag }}
+         </div>
+      
+      {% when 'video' %}
+      
+         <div class="product-single__media product-single__media--video product-single__media--{{ media.id }}" style="padding-top: {{ 1 | divided_by: media.aspect_ratio | times: 100 }}%;">
+            {{ media | video_tag: class: 'media-video', image_size: image_size }}
+         </div>
+
+   {% endcase %}
+
+</div>

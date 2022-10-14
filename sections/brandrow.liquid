@@ -1,0 +1,70 @@
+<div id="brandrow" {% if section.settings.brandrow_classes %}class="{{ section.settings.brandrow_classes }}"{% endif %}>
+  <div class="container">
+    <div class="columns is-mobile is-multiline">
+      {% for block in section.blocks %} 
+        {% if block.settings.brandbox %}
+          <div class="column  is-6-mobile">
+            <a href="{{ block.settings.brandbox-link.url }}"><div class="brandbox {% if section.settings.brandbox_class %} {{ section.settings.brandbox_class }} {% endif %}">
+              <div class="brandbox-img">
+                <img src="{{ block.settings.brandbox | img_url: 'original' }}" {% if section.settings.brand_height %}style="max-height:{{ section.settings.brand_height}};"{% endif %}>
+              </div>
+            </div></a>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Brand Row",
+    "settings": [
+    {
+			"id": "brandrow_classes",
+			"type": "text",
+			"label": "Brand Row Classes"
+    },
+		{
+			"id": "brandbox_class",
+			"type": "text",
+			"label": "Brand Box Classes"
+    },
+    {
+			"id": "brand_height",
+			"type": "text",
+			"label": "Brand Image Max Height"
+    }		
+  ],
+  "blocks": [
+    {
+      "type": "select",
+      "name": "Brand Box",
+      "settings": [
+        {
+          "id": "brandbox",
+          "type": "image_picker",
+          "label": "Brand Box"
+        },
+        {
+          "id": "brandbox-link",
+          "type": "url",
+          "label": "Brand Box Link"
+        }
+      ]
+    }
+  ],
+	"presets": [
+      {
+        "name": "Brand Row",
+        "category": "Sections"
+      }
+	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

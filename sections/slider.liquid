@@ -1,0 +1,279 @@
+<div id="slidersection" {% if section.settings.slider_classes %}class="{{ section.settings.slider_classes }}"{% endif %}>
+    <div class="slider-wrap {% if section.settings.slider_container %}container{% endif %}">
+        <div class="jar-slider">
+            {% if section.settings.slideimg_1 %}
+                <div class="slide" style="background: url('{{ section.settings.slideimg_1 | img_url: 'x1920' }}'); height: {{ section.settings.slide_height }}vw;">    
+                    <div class="slide-content {% if section.settings.slider_container %}px-6{% endif %}">
+                        <div class="container">   
+                            <div class="s-content-wrap">
+                                <p class="s-pretext">{{ section.settings.slidepre_1 }}</p>            
+                                <h3 class="s-title">{{ section.settings.slidetitle_1 }}</h3>
+                                <p class="s-blurb">{{ section.settings.slideblurb_1 }}</p>
+                                {% if section.settings.slidebttn_on %}
+                                    <div class="bttn is-primary mt-5">
+                                    {{ section.settings.slidebutton_1 }}
+                                    </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+            {% if section.settings.slideimg_2 %}
+                <div class="slide" style="background: url('{{ section.settings.slideimg_2 | img_url: 'x1920' }}'); height: {{ section.settings.slide_height }}vw;">
+                    <div class="slide-content {% if section.settings.slider_container %}px-6{% endif %}">
+                        <div class="container">   
+                            <div class="s-content-wrap">
+                                <p class="s-pretext">{{ section.settings.slidepre_2 }}</p>            
+                                <h3 class="s-title">{{ section.settings.slidetitle_2 }}</h3>
+                                <p class="s-blurb">{{ section.settings.slideblurb_2 }}</p>
+                                {% if section.settings.slidebttn_on %}
+                                    <div class="bttn is-primary mt-5">
+                                    {{ section.settings.slidebutton_2 }}
+                                    </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+            {% if section.settings.slideimg_3 %}
+                <div class="slide" style="background: url('{{ section.settings.slideimg_3 | img_url: 'x1920' }}'); height: {{ section.settings.slide_height }}vw;">
+                    <div class="slide-content {% if section.settings.slider_container %}px-6{% endif %}">
+                        <div class="container">   
+                            <div class="s-content-wrap">
+                                <p class="s-pretext">{{ section.settings.slidepre_3 }}</p>            
+                                <h3 class="s-title">{{ section.settings.slidetitle_3 }}</h3>
+                                <p class="s-blurb">{{ section.settings.slideblurb_3 }}</p>
+                                {% if section.settings.slidebttn_on %}
+                                    <div class="bttn is-primary mt-5">
+                                    {{ section.settings.slidebutton_3 }}
+                                    </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+            {% if section.settings.slideimg_4 %}
+                <div class="slide" style="background: url('{{ section.settings.slideimg_4 | img_url: 'x1920' }}'); height: {{ section.settings.slide_height }}vw;">
+                    <div class="slide-content {% if section.settings.slider_container %}px-6{% endif %}">
+                        <div class="container">   
+                            <div class="s-content-wrap">
+                                <p class="s-pretext">{{ section.settings.slidepre_4 }}</p>            
+                                <h3 class="s-title">{{ section.settings.slidetitle_4 }}</h3>
+                                <p class="s-blurb">{{ section.settings.slideblurb_4 }}</p>
+                                {% if section.settings.slidebttn_on %}
+                                    <div class="bttn is-primary mt-5">
+                                    {{ section.settings.slidebutton_4 }}
+                                    </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+            {% if section.settings.slideimg_5 %}
+                <div class="slide" style="background: url('{{ section.settings.slideimg_5 | img_url: 'x1920' }}'); height: {{ section.settings.slide_height }}vw;">
+                    <div class="slide-content {% if section.settings.slider_container %}px-6{% endif %}">
+                        <div class="container">   
+                            <div class="s-content-wrap">
+                                <p class="s-pretext">{{ section.settings.slidepre_5 }}</p>            
+                                <h3 class="s-title">{{ section.settings.slidetitle_5 }}</h3>
+                                <p class="s-blurb">{{ section.settings.slideblurb_5 }}</p>
+                                {% if section.settings.slidebttn_on %}
+                                    <div class="bttn is-primary mt-5">
+                                    {{ section.settings.slidebutton_5 }}
+                                    </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+<script type="module">  
+    var slider = tns({
+      container: '.jar-slider',
+      items: 1,
+      slideBy: 'page',
+      autoplay: true,
+      autoplayButton: false,
+      loop: true,
+      touch: true,
+      mouseDrag: true,
+      nav: false,
+      speed: 600,
+      controlsText: ['<i class="fas fa-chevron-left"></i>','<i class="fas fa-chevron-right"></i>']
+    });
+</script>
+
+
+{% schema %}
+  {
+     "name": { "en": "Slider" },
+     "settings": [
+        {
+            "type": "checkbox",
+            "id": "slider_container",
+            "label": "Slider Container",
+            "default": false
+        }, 
+        {
+            "type": "range",
+            "id": "slide_height",
+            "min": 1,
+            "max": 100,
+            "step": 1,
+            "unit": "vh",
+            "label": "Slide Height",
+            "default": 50
+        },
+        {
+			"id": "slider_classes",
+			"type": "text",
+			"label": "Slider Classes"
+        },
+        {
+            "type": "checkbox",
+            "id": "slidebttn_on",
+            "label": "Slider Button",
+            "default": true
+        }, 
+        {
+            "id": "slideimg_1",
+            "type": "image_picker",
+            "label": "Slider Image 1"
+        },
+        {
+			"id": "slidepre_1",
+			"type": "text",
+			"label": "Slider Pre-text 1"
+        },
+        {
+			"id": "slidetitle_1",
+			"type": "text",
+			"label": "Slider Title 1"
+        },
+        {
+			"id": "slideblurb_1",
+			"type": "text",
+			"label": "Slider Blurb 1"
+        },        
+        {
+			"id": "slidebutton_1",
+			"type": "text",
+			"label": "Slider Button Text 1"
+        },
+        {
+            "id": "slideimg_2",
+            "type": "image_picker",
+            "label": "Slider Image 2"
+        },
+        {
+			"id": "slidepre_2",
+			"type": "text",
+			"label": "Slider Pre-text 2"
+        },
+        {
+			"id": "slidetitle_2",
+			"type": "text",
+			"label": "Slider Title 2"
+        },
+        {
+			"id": "slideblurb_2",
+			"type": "text",
+			"label": "Slider Blurb 2"
+        },
+        {
+			"id": "slidebutton_2",
+			"type": "text",
+			"label": "Slider Button Text 2"
+        },
+        {
+            "id": "slideimg_3",
+            "type": "image_picker",
+            "label": "Slider Image 3"
+        },
+        {
+			"id": "slidepre_3",
+			"type": "text",
+			"label": "Slider Pre-text 3"
+        },
+        {
+			"id": "slidetitle_3",
+			"type": "text",
+			"label": "Slider Title 3"
+        },
+        {
+			"id": "slideblurb_3",
+			"type": "text",
+			"label": "Slider Blurb 3"
+        },
+        {
+			"id": "slidebutton_3",
+			"type": "text",
+			"label": "Slider Button Text 3"
+        },
+        {
+            "id": "slideimg_4",
+            "type": "image_picker",
+            "label": "Slider Image 4"
+        },
+        {
+			"id": "slidepre_4",
+			"type": "text",
+			"label": "Slider Pre-text 4"
+        },
+        {
+			"id": "slidetitle_4",
+			"type": "text",
+			"label": "Slider Title 4"
+        },
+        {
+			"id": "slideblurb_4",
+			"type": "text",
+			"label": "Slider Blurb 4"
+        },
+        {
+			"id": "slidebutton_4",
+			"type": "text",
+			"label": "Slider Button Text 4"
+        },
+        {
+            "id": "slideimg_5",
+            "type": "image_picker",
+            "label": "Slider Image 5"
+        },
+        {
+			"id": "slidepre_5",
+			"type": "text",
+			"label": "Slider Pre-text 5"
+        },
+        {
+			"id": "slidetitle_5",
+			"type": "text",
+			"label": "Slider Title 5"
+        },
+        {
+			"id": "slideblurb_5",
+			"type": "text",
+			"label": "Slider Blurb 5"
+        },
+        {
+			"id": "slidebutton_5",
+			"type": "text",
+			"label": "Slider Button Text 5"
+        }
+     ],
+     "presets": [
+      {
+        "name": "Slider",
+        "category": "Widgets"
+      }
+	]
+  }
+  {% endschema %}

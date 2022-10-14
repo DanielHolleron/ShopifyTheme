@@ -1,0 +1,43 @@
+{% comment %}
+    Renders a product card using "Grid" style
+{% endcomment %}
+
+{% capture img_id %}ProductCardImage-{{ section.id }}-{{ product.id }}{% endcapture %}
+{% capture wrapper_id %}ProductCardImageWrapper-{{ section.id }}-{{ product.id }}{% endcapture %}
+{%- assign preview_image = product.featured_media.preview_image -%}
+{%- assign img_url = preview_image | img_url: '1x1' | replace: '_1x1.', '_300x.' -%}
+
+<div class="card is-block product-grid-item">
+
+   <div class="card-image">
+      <figure class="image">
+         <img id="{{ img_id }}" alt="{{ preview_image.alt }}" src="{{ img_url }}" />
+        <img class="logoover" src="{{ 'FINAL_Light.png' | asset_url }}" class="img-responsive"/>        
+      </figure>
+      <div class="product-options">
+         <div class="opt-wrap">
+            <a href="#"><div class="prod-optbox is-primary bttn"><i class="fas fa-envelope"></i></div></a>
+            <a href="#"><div class="prod-optbox is-primary bttn"><i class="fas fa-heart"></i></div></a>
+            <a href="{{ product.url | within: collection }}"><div class="prod-optbox is-primary bttn"><i class="fas fa-shopping-basket"></i></div></a>
+         </div>
+      </div>
+   </div>
+
+   <a href="{{ product.url | within: collection }}"">
+
+      <div class="card-content">
+         <div class="media">
+            <div class="media-content product-grid-item-desc">
+               <p class="title is-4 is-spaced">
+                  {{ product.title }}
+               </p>
+               <p class="subtitle is-6">{% include 'product-price-listing' %}</p>
+
+               
+            </div>
+         </div>							
+      </div>
+
+   </a> <!-- .card.product-grid-item -->
+
+</div>

@@ -1,0 +1,73 @@
+{% comment %} Common HTML used in every layout in the theme. {% endcomment %}
+
+
+{%- if canonical_url != blank  -%}
+   <link rel="canonical" href="{{ canonical_url }}" />
+{%- endif -%}
+
+
+{%- if settings.favicon != blank -%}
+   <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png" />
+{%- endif -%}
+
+
+{%- capture seo_title -%}
+   {%- if request.page_type == 'search' and search.performed == true -%}
+      {{ 'general.search.heading' | t: count: search.results_count }}: {{ 'general.search.results_with_count' | t: terms: search.terms, count: search.results_count }}
+   {%- else -%}
+      {{ page_title }}
+   {%- endif -%}
+   {%- if current_tags -%}
+      {%- assign meta_tags = current_tags | join: ', ' -%} &ndash; {{ 'general.meta.tags' | t: tags: meta_tags -}}
+   {%- endif -%}
+   {%- if current_page != 1 -%}
+      &ndash; {{ 'general.meta.page' | t: page: current_page }}
+   {%- endif -%}
+   {%- assign escaped_page_title = page_title | escape -%}
+   {%- unless escaped_page_title contains shop.name -%}
+      &ndash; {{ shop.name }}
+   {%- endunless -%}
+{%- endcapture -%}
+<title>{{ seo_title | strip }}</title>
+
+
+{%- if page_description -%}
+   <meta name="description" content="{{ page_description | escape }}" />
+{%- endif -%}
+
+
+{% include 'social-meta-tags' %}
+
+
+<link rel="preload" as="font" href="{{ settings.type_header_font | font_url }}" type="font/woff2" crossorigin>
+<link rel="preload" as="font" href="{{ settings.type_base_font | font_url }}" type="font/woff2" crossorigin>
+<style>
+   {{ settings.type_header_font | font_face: font_display: 'swap' }}
+   {{ settings.type_base_font | font_face: font_display: 'swap' }}
+</style>
+{% include 'css-variables' %}
+
+
+<link rel="stylesheet" href="{{ 'bulma.min.css' | asset_url }}" type="text/css" />
+<link rel="stylesheet" href="{{ 'fontawesome.all.min.rel.css' | asset_url }}" type="text/css" />
+<link rel="stylesheet" href="{{ 'theme.css' | asset_url }}" type="text/css" />
+
+
+{%- if request.page_type contains 'customers/' -%}
+   <script src="{{ 'shopify_common.js' | shopify_asset_url }}" defer="defer"></script>
+{%- endif -%}
+
+
+<script src="{{ 'theme.js' | asset_url }}" defer="defer"></script>
+
+
+<script type="text/javascript">
+   if (window.MSInputMethodContext && document.documentMode) {
+      var scripts = document.getElementsByTagName('script')[0];
+      var polyfill = document.createElement("script");
+      polyfill.defer = true;
+      polyfill.src = "{{ 'ie11CustomProperties.min.js' | asset_url }}";
+      scripts.parentNode.insertBefore(polyfill, scripts);
+   }
+   document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+</script>

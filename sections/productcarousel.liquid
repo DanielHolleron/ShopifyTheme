@@ -1,0 +1,72 @@
+<div id="productcarousel">
+    <div class="container">
+        <div class="product-item-deck">
+
+        {%- assign collection = collections[section.settings.collection] -%}  
+            <div id="product-grid" class="product-grid glide" data-template="#product-grid-template">
+                <div class="glide__track" data-glide-el="track">
+                    <div class="glide__slides">             
+                        
+                        {% for product in collection.products limit: 12 %}
+
+                            <div class="column glide__slide {{ class }} product--{{section.id}}">
+                                {% include 'product-card-grid', max_height: max_height, product: product, show_vendor: section.settings.show_vendor %}
+                            </div>
+      
+                        {% endfor %} 
+                        
+                    </div> <!-- .glide__slides -->
+                </div> <!-- .glide__track -->
+                <div class="glide__arrows" data-glide-el="controls">
+                    <button class="glide__arrow glide__arrow--left is-primary bttn" data-glide-dir="<"><i class="fas fa-chevron-left"></i></button>
+                    <button class="glide__arrow glide__arrow--right is-primary bttn" data-glide-dir=">"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div> <!-- #product-grid2.glide -->
+
+            <script type="text/javascript">
+                new Glide('#product-grid', {
+                    type: 'carousel',
+                    startAt: 0,
+                    perView: 5,
+                    breakpoints: {
+                      	1500: {
+                            perView: 4
+                        },
+                      	1100: {
+                            perView: 3
+                        },
+                        800: {
+                            perView: 2
+                        }
+                    }
+                }).mount()
+            </script>
+        
+        </div>        
+    </div>
+</div>
+
+{% schema %}
+{
+   "name": { "en": "Collection Carousel" },
+   "settings": [
+      {
+         "id": "collection",
+         "type": "collection",
+         "label": { "en": "Collection" }
+      },
+      {
+         "type": "checkbox",
+         "id": "show_vendor",
+         "label": { "en": "Show product vendors" },
+         "default": false
+      }
+   ],
+   "presets": [
+      {
+         "name": { "en": "Collection Carousel" },
+         "category": { "en": "Collection" }
+      }
+   ]
+}
+{% endschema %}

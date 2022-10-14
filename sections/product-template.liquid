@@ -1,0 +1,238 @@
+<div class="container my-6">
+
+    {% comment %}
+        Get first variant, or deep linked one
+    {% endcomment %}
+    {%- assign current_variant = product.selected_or_first_available_variant -%}
+    {%- assign product_image_zoom_size = '1024x1024' -%}
+    {%- assign product_image_scale = '2' -%}
+    {%- assign enable_image_zoom = section.settings.enable_image_zoom -%}
+    {%- assign compare_at_price = current_variant.compare_at_price -%}
+    {%- assign price = current_variant.price -%}
+    {%- assign featured_media = product.selected_or_first_available_variant.featured_media | default: product.featured_media -%}
+
+    <div class="columns">
+
+        <div class="column is-6 product-image-column">
+            <div id="image_gallery" class="product_gallery glide" data-template="#image_gallery">
+                <div class="glide__track" data-glide-el="track">
+                    <div class="glide__slides">             
+                        
+                        {% assign images = product.media | where: "media_type", "image" %}
+                        {% for image in product.images %}
+
+                            <div class="glide__slide">
+                                <img src="{{ image | img_url: "x1000" }}">
+                            </div>
+      
+                        {% endfor %} 
+                        
+                    </div> <!-- .glide__slides -->
+                </div> <!-- .glide__track -->
+                <div class="glide__arrows" data-glide-el="controls">
+                    <button class="glide__arrow glide__arrow--left is-primary bttn" data-glide-dir="<"><i class="fas fa-chevron-left"></i></button>
+                    <button class="glide__arrow glide__arrow--right is-primary bttn" data-glide-dir=">"><i class="fas fa-chevron-right"></i></button>
+                </div>
+              
+              <div class="logohover">
+                  	<img src="{{ 'FINAL_Light.png' | asset_url }}" class="img-responsive"/>
+              	</div>
+              	
+            </div> <!-- #product-grid2.glide -->
+
+            <script type="text/javascript">
+                new Glide('#image_gallery', {
+                    type: 'carousel',
+                    startAt: 0,
+                    perView: 1,
+                    breakpoints: {
+                        800: {
+                            perView: 1
+                        }
+                    }
+                }).mount()
+            </script>
+        </div>
+        
+        <div class="column product-info-column p-6">
+            <h1 class="product-single__title title is-2">{{ product.title }}</h1>
+
+            <div class="product__price">
+                {% include 'product-price', variant: current_variant, show_vendor: section.settings.show_vendor %}
+            </div>
+            {%- if shop.taxes_included or shop.shipping_policy.body != blank -%}
+                <div class="product__policies rte is-size-7" data-product-policies>
+                    {%- if shop.taxes_included -%}
+                        {{ 'products.product.include_taxes' | t }}
+                    {%- endif -%}
+                    {%- if shop.shipping_policy.body != blank -%}
+                        {{ 'products.product.shipping_policy_html' | t: link: shop.shipping_policy.url }}
+                    {%- endif -%}
+                </div>
+            {%- endif -%}
+
+            <div class="product-description pt-3 pb-5">
+                {{ product.description }}
+            </div>            
+
+            {% capture "form_classes" -%}
+                product-form product-form-{{ section.id }} pt-4
+                {%- if section.settings.enable_payment_button and product.has_only_default_variant %} product-form--payment-button-no-variants {%- endif -%}
+                {%- if current_variant.available == false %} product-form--variant-sold-out {%- endif -%}
+            {%- endcapture %}
+
+            {% form 'product', product, class:form_classes, novalidate: 'novalidate', data-product-form: '', data-product-handle: product.handle %}
+                {% unless product.has_only_default_variant %}
+                    <div class="product-form__controls-group">
+                        {% for option in product.options_with_values %}
+                            <div class="selector-wrapper js product-form__item">
+                                <label for="SingleOptionSelector-{{ forloop.index0 }}">
+                                    {{ option.name }}
+                                </label>
+
+                                <div class="field mb-3">
+                                    <div class="control">
+                                        <div class="select">
+                                            <select class="single-option-selector single-option-selector-{{ section.id }} product-form__input"
+                                                    id="SingleOptionSelector-{{ forloop.index0 }}"
+                                                    data-index="option{{ forloop.index }}">
+                                                {% for value in option.values %}
+                                                    <option value="{{ value | escape }}"{% if option.selected_value == value %} selected="selected"{% endif %}>{{ value }}</option>
+                                                {% endfor %}
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endunless %}
+
+                <select name="id" id="selectable-variations" class="is-hidden">
+                    {% for variant in product.variants %}
+                      <option value="{{ variant.id }}"
+                        {%- if variant == current_variant %} selected="selected" {%- endif -%}
+                      >
+                        {{ variant.title }}  {%- if variant.available == false %} - {{ 'products.product.sold_out' | t }}{% endif %}
+                      </option>
+                    {% endfor %}
+                </select>
+
+                {% if section.settings.show_quantity_selector %}
+                    <div class="product-form__controls-group">
+                        <div class="product-form__item">
+                        <label for="Quantity-{{ section.id }}">{{ 'products.product.quantity' | t }}</label>
+                        <input type="number" id="Quantity-{{ section.id }}"
+                            name="quantity" value="1" min="1" pattern="[0-9]*"
+                            class="product-form__input product-form__input--quantity" data-quantity-input />
+                        </div>
+                    </div>
+                {% endif %}
+
+                <!-- div class="product-form__error-message-wrapper product-form__error-message-wrapper--hidden{% if section.settings.enable_payment_button %} product-form__error-message-wrapper--has-payment-button{% endif %}"
+                     data-error-message-wrapper
+                     role="alert">
+                    <span class="is-hidden">{{ 'general.accessibility.error' | t }} </span>
+                    <span class="product-form__error-message" data-error-message>{{ 'products.product.quantity_minimum_message' | t }}</span>
+                </div -->
+
+                <div class="product-form__controls-group product-form__controls-group--submit pt-4">
+                    <div class="product-form__item product-form__item--submit
+                        {%- if section.settings.enable_payment_button %} product-form__item--payment-button {%- endif -%}
+                        {%- if product.has_only_default_variant %} product-form__item--no-variants {%- endif -%}">
+                        <button type="submit" name="add" class="button is-fullwidth is-primary"
+                        {% unless current_variant.available %} aria-disabled="true"{% endunless %}
+                        aria-label="{% unless current_variant.available %}{{ 'products.product.sold_out' | t }}{% else %}{{ 'products.product.add_to_cart' | t }}{% endunless %}"
+                        class="btn product-form__cart-submit{% if section.settings.enable_payment_button and product.selling_plan_groups == empty %} btn--secondary-accent{% endif %}"
+                        {% if settings.enable_ajax %}aria-haspopup="dialog"{% endif %}
+                        data-add-to-cart>
+                            <span data-add-to-cart-text>
+                                {% unless current_variant.available %}
+                                    {{ 'products.product.sold_out' | t }}
+                                {% else %}
+                                    {{ 'products.product.add_to_cart' | t }}
+                                {% endunless %}
+                            </span>
+                        </button>
+                        {% if section.settings.enable_payment_button %}
+                            <div class="mt-2">
+                                {{ form | payment_button }}
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+
+            {% endform %}
+
+            {% if section.settings.show_share_buttons %}
+                {% include 'social-sharing', share_title: product.title, share_permalink: product.url, share_image: product %}
+            {% endif %}
+
+        </div> <!-- .product-info-column -->
+
+    </div> <!-- .columns -->
+
+</div> <!-- .container -->
+
+{% schema %}
+{
+  "name": { "en": "Product pages" },
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_quantity_selector",
+      "label": { "en": "Show quantity selector" },
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_vendor",
+      "label": { "en": "Show vendor" },
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_payment_button",
+      "label": { "en": "Show dynamic checkout button" },
+      "info": { "en": "Each customer will see their preferred payment method from those available on your store, such as PayPal or Apple Pay. [Learn more](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)" },
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_share_buttons",
+      "label": { "en": "Show social sharing buttons" },
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": { "en": "Media" },
+      "info": { "en": "Learn more about [media types](https://help.shopify.com/manual/products/product-media)" }
+    },
+    {
+      "type": "select",
+      "id": "media_size",
+      "label": { "en": "Size" },
+      "options": [
+        { "value": "small", "label": { "en": "Small" } },
+        { "value": "medium", "label": { "en": "Medium" } },
+        { "value": "large", "label": { "en": "Large" } },
+        { "value": "full", "label": { "en": "Full-width" } }
+      ],
+      "default": "medium"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_image_zoom",
+      "label": { "en": "Enable image zoom" },
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_video_looping",
+      "label": { "en": "Enable video looping" },
+      "default": false
+    }
+  ]
+}
+{% endschema %}
