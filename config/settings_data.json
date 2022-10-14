@@ -49,35 +49,6 @@
           "has_button": false
         }
       },
-      "16109853017b43dcc6": {
-        "type": "slider",
-        "settings": {
-          "slider_container": false,
-          "slide_height": 31,
-          "slider_classes": "",
-          "slidebttn_on": false,
-          "slidepre_1": "",
-          "slidetitle_1": "",
-          "slideblurb_1": "",
-          "slidebutton_1": "",
-          "slidepre_2": "",
-          "slidetitle_2": "",
-          "slideblurb_2": "",
-          "slidebutton_2": "",
-          "slidepre_3": "",
-          "slidetitle_3": "",
-          "slideblurb_3": "",
-          "slidebutton_3": "",
-          "slidepre_4": "",
-          "slidetitle_4": "",
-          "slideblurb_4": "",
-          "slidebutton_4": "",
-          "slidepre_5": "",
-          "slidetitle_5": "",
-          "slideblurb_5": "",
-          "slidebutton_5": ""
-        }
-      },
       "collection-template": {
         "type": "collection-template",
         "settings": {
@@ -110,106 +81,6 @@
           "show_vendor": true
         }
       },
-      "164925296541020793": {
-        "type": "catgrid",
-        "blocks": {
-          "dbd24e31-12c9-4e70-bc2b-e5e62fe55723": {
-            "type": "select",
-            "settings": {
-              "cat-class": "column is-6-mobile",
-              "fullcat-link": "shopify:\/\/collections\/pre-workouts",
-              "fullcat_sub": "",
-              "fullcat_title": "",
-              "button_text": ""
-            }
-          },
-          "282f2e28-2e2c-4069-b005-14c328ea4b1f": {
-            "type": "select",
-            "settings": {
-              "cat-class": "column is-6-mobile",
-              "fullcat-link": "shopify:\/\/collections\/frontpage",
-              "fullcat_sub": "",
-              "fullcat_title": "",
-              "button_text": ""
-            }
-          },
-          "e9ca6cb1-90ee-4730-ad2e-54a89aff89f6": {
-            "type": "select",
-            "settings": {
-              "cat-class": "column is-6-mobile",
-              "fullcat-link": "shopify:\/\/collections\/protein-bars",
-              "fullcat_sub": "",
-              "fullcat_title": "",
-              "button_text": ""
-            }
-          },
-          "9a20d1e0-b838-4e4c-86ab-a54cc48b8122": {
-            "type": "select",
-            "settings": {
-              "cat-class": "column is-6-mobile",
-              "fullcat-link": "shopify:\/\/collections\/workout-accessories",
-              "fullcat_sub": "",
-              "fullcat_title": "",
-              "button_text": ""
-            }
-          }
-        },
-        "block_order": [
-          "dbd24e31-12c9-4e70-bc2b-e5e62fe55723",
-          "282f2e28-2e2c-4069-b005-14c328ea4b1f",
-          "e9ca6cb1-90ee-4730-ad2e-54a89aff89f6",
-          "9a20d1e0-b838-4e4c-86ab-a54cc48b8122"
-        ],
-        "settings": {
-          "catrow_classes": "pb-5 px-3 mb-5 mt-6",
-          "cat_height": "600px",
-          "has_button": false
-        }
-      },
-      "1649252971532e49dd": {
-        "type": "uspsection",
-        "blocks": {
-          "bf399ace-a394-4d76-ad85-347cc887f48b": {
-            "type": "select",
-            "settings": {
-              "usp_title": "free uk postage",
-              "usp_subtitle": "Worldwide Postage Available PRICE may vary. Free sample on every order!"
-            }
-          },
-          "06f0a363-a586-4289-94da-e2c2631df167": {
-            "type": "select",
-            "settings": {
-              "usp_title": "Satisfied or refunded",
-              "usp_subtitle": "We're 100% sure you'll love our supplements, or you'll get your money back!"
-            }
-          },
-          "98adcd7e-4c69-4d7b-9e54-6d9fb1a38515": {
-            "type": "select",
-            "settings": {
-              "usp_title": "Top-notch support",
-              "usp_subtitle": "eMail , Live Chat & Freephone Support Available to ensure you get the best Support"
-            }
-          },
-          "84d82724-c95c-48f1-85c7-c2abf669cddf": {
-            "type": "select",
-            "settings": {
-              "usp_title": "Secure payments",
-              "usp_subtitle": "We're crazy about security, that's why we use SSL Encryption."
-            }
-          }
-        },
-        "block_order": [
-          "bf399ace-a394-4d76-ad85-347cc887f48b",
-          "06f0a363-a586-4289-94da-e2c2631df167",
-          "98adcd7e-4c69-4d7b-9e54-6d9fb1a38515",
-          "84d82724-c95c-48f1-85c7-c2abf669cddf"
-        ],
-        "settings": {
-          "usp_row_classes": "my-5 py-4 px-3 is-hidden-desktop",
-          "usp_column_class": "",
-          "usp_box_class": "landscape"
-        }
-      },
       "164925578068b7dd08": {
         "type": "productcarousel",
         "settings": {
@@ -220,7 +91,7 @@
       "1649258645b4279bd5": {
         "type": "section_header",
         "settings": {
-          "sh_classes": "container pb-3 px-3",
+          "sh_classes": "container pb-3 px-3 mt-6",
           "sh_pre": "Check Out Our",
           "sh_title": "Latest Products"
         }
@@ -228,108 +99,13 @@
       "164925880603c039c4": {
         "type": "hero",
         "settings": {
+          "image": "shopify:\/\/shop_images\/herobanner.jpg",
           "alignment": "center",
           "text_colour": "#222222",
           "title": "Massive range of discount supplements",
           "text": "<p><br\/>With our outstanding Customer Service we assure your shopping experience with Alpha supplements UK is Second to none. Please check out our exclusive daily deals on our amazing products!!! <\/p>",
           "button_label": "Shop Now",
           "button_link": "shopify:\/\/collections\/clothing"
-        }
-      },
-      "16492589286bfec01d": {
-        "type": "brandrow",
-        "blocks": {
-          "e695cdcf-b358-4954-86f8-4379514af396": {
-            "type": "select",
-            "settings": {
-              "brandbox-link": ""
-            }
-          },
-          "29cabc5a-6387-4f79-9078-2ea3cc8c3e95": {
-            "type": "select",
-            "settings": {
-              "brandbox-link": ""
-            }
-          },
-          "d06b9f1d-948c-4692-8bc3-1f1a88e830bf": {
-            "type": "select",
-            "settings": {
-              "brandbox-link": ""
-            }
-          },
-          "dacc5b4f-bd23-4227-927a-ad275337904c": {
-            "type": "select",
-            "settings": {
-              "brandbox-link": ""
-            }
-          },
-          "abf0a00e-2fd8-497e-a331-dd9f7c58eeea": {
-            "type": "select",
-            "settings": {
-              "brandbox-link": ""
-            }
-          },
-          "d837b561-b3a5-45f9-90ba-242b8c150cf9": {
-            "type": "select",
-            "settings": {
-              "brandbox-link": ""
-            }
-          },
-          "5d4a0d20-a692-4a0a-9e30-2dd757da8154": {
-            "type": "select",
-            "settings": {
-              "brandbox-link": ""
-            }
-          }
-        },
-        "block_order": [
-          "e695cdcf-b358-4954-86f8-4379514af396",
-          "29cabc5a-6387-4f79-9078-2ea3cc8c3e95",
-          "d06b9f1d-948c-4692-8bc3-1f1a88e830bf",
-          "dacc5b4f-bd23-4227-927a-ad275337904c",
-          "abf0a00e-2fd8-497e-a331-dd9f7c58eeea",
-          "d837b561-b3a5-45f9-90ba-242b8c150cf9",
-          "5d4a0d20-a692-4a0a-9e30-2dd757da8154"
-        ],
-        "settings": {
-          "brandrow_classes": "px-3 is-mobile is-multiline",
-          "brandbox_class": "p-2",
-          "brand_height": "50px"
-        }
-      },
-      "1649261900ddb224aa": {
-        "type": "mediagrid",
-        "blocks": {
-          "ccbb2f67-2080-4d42-a862-a3424b5ee1f1": {
-            "type": "select",
-            "settings": {
-              "med_col": "aboutusblock",
-              "medcol_classes": ""
-            }
-          },
-          "ea017b65-edbc-43bf-8826-0d749a7c707c": {
-            "type": "select",
-            "settings": {
-              "med_col": "contactusblock",
-              "medcol_classes": ""
-            }
-          },
-          "27837096-3521-49ec-ac7a-3d51244df627": {
-            "type": "select",
-            "settings": {
-              "med_col": "mediapromoblock",
-              "medcol_classes": ""
-            }
-          }
-        },
-        "block_order": [
-          "ccbb2f67-2080-4d42-a862-a3424b5ee1f1",
-          "ea017b65-edbc-43bf-8826-0d749a7c707c",
-          "27837096-3521-49ec-ac7a-3d51244df627"
-        ],
-        "settings": {
-          "mediarow_classes": "my-6 py-5 px-3",
-          "aboutblock_text": "<p>At Alpha Supplements , we strive to deliver best Sporting Supplements for all kind of fitness levels, wether you are just beginning the journey or you are an athlete, be sure we will provide you with top notch supplements to help you achieve your goals.<\/p><p>We offer very competitive prices, free samples, free delivery within the UK&I and we are a family run business ,thats what makes us different compared to our competitors.<\/p><p>eBay buyers trusted us since 2019... now It's your turn to concentrate on your goals.<\/p>"
         }
       },
       "16493353611382f79e": {
@@ -355,38 +131,132 @@
               "usp_title": "Excellent Customer Support",
               "usp_subtitle": "We're always here to help out if you have a question, contact us by live chat!"
             }
-          },
-          "55e69ea2-6410-4430-842d-92591df802b7": {
-            "type": "select",
-            "settings": {
-              "usp_title": "Secure payments",
-              "usp_subtitle": "We're crazy about security, that's why we use SSL Encryption."
-            }
           }
         },
         "block_order": [
           "d43d78a4-3475-4002-84f0-65bc732c278c",
           "f5e87adf-d296-46f1-a6ea-5b1a65af5376",
-          "fb920441-2f78-4107-bfcb-c61d18360cb6",
-          "55e69ea2-6410-4430-842d-92591df802b7"
+          "fb920441-2f78-4107-bfcb-c61d18360cb6"
         ],
         "settings": {
-          "usp_row_classes": "mt-5 mb-6 px-3 is-hidden-mobile",
+          "usp_row_classes": "my-2 p-3 is-hidden-mobile",
           "usp_column_class": "",
           "usp_box_class": "landscape"
+        }
+      },
+      "8fd8e252-7d1c-4a09-855c-48d3d4fab19a": {
+        "type": "catgrid",
+        "blocks": {
+          "864df0a3-7b40-42e0-a650-b5185894044d": {
+            "type": "select",
+            "settings": {
+              "cat-class": "column",
+              "fullcat-link": "",
+              "catimg": "shopify:\/\/shop_images\/promo1.jpg",
+              "fullcat_sub": "Check Out Our Range of",
+              "fullcat_title": "Testing Category",
+              "button_text": "Shop Now"
+            }
+          },
+          "9cb8aa0c-bd7a-455d-a4c8-d19a37591c29": {
+            "type": "select",
+            "settings": {
+              "cat-class": "column has-text-centered",
+              "fullcat-link": "",
+              "catimg": "shopify:\/\/shop_images\/promo2.jpg",
+              "fullcat_sub": "Check Out Our Range of",
+              "fullcat_title": "Testing Category",
+              "button_text": "Shop Now"
+            }
+          }
+        },
+        "block_order": [
+          "864df0a3-7b40-42e0-a650-b5185894044d",
+          "9cb8aa0c-bd7a-455d-a4c8-d19a37591c29"
+        ],
+        "settings": {
+          "catrow_classes": "my-3",
+          "cat_height": "",
+          "has_button": false
+        }
+      },
+      "0ed3085d-1b87-4d8b-a626-1f68510b9d30": {
+        "type": "catgrid",
+        "blocks": {
+          "2b521dd2-3c22-424c-9baa-7d82c9648e01": {
+            "type": "select",
+            "settings": {
+              "cat-class": "column",
+              "fullcat-link": "",
+              "catimg": "shopify:\/\/shop_images\/cat1.jpg",
+              "fullcat_sub": "Check Out Our Range of",
+              "fullcat_title": "Testing Category",
+              "button_text": "Shop Now"
+            }
+          },
+          "cbe407b8-a10d-419e-953c-b0238bdc4f7f": {
+            "type": "select",
+            "settings": {
+              "cat-class": "column",
+              "fullcat-link": "",
+              "catimg": "shopify:\/\/shop_images\/cat2.jpg",
+              "fullcat_sub": "Check Out Our Range of",
+              "fullcat_title": "Testing Category",
+              "button_text": "Shop Now"
+            }
+          },
+          "decd90a0-c741-4cb6-8058-03b678013932": {
+            "type": "select",
+            "settings": {
+              "cat-class": "column",
+              "fullcat-link": "",
+              "catimg": "shopify:\/\/shop_images\/cat3.jpg",
+              "fullcat_sub": "Check Out Our Range of",
+              "fullcat_title": "Testing Category",
+              "button_text": "Shop Now"
+            }
+          },
+          "ac9afff7-8b0e-4764-9a7b-ed6ef8241f01": {
+            "type": "select",
+            "settings": {
+              "cat-class": "column",
+              "fullcat-link": "",
+              "catimg": "shopify:\/\/shop_images\/cat4.jpg",
+              "fullcat_sub": "Check Out Our Range of",
+              "fullcat_title": "Testing Category",
+              "button_text": "Shop Now"
+            }
+          }
+        },
+        "block_order": [
+          "2b521dd2-3c22-424c-9baa-7d82c9648e01",
+          "cbe407b8-a10d-419e-953c-b0238bdc4f7f",
+          "decd90a0-c741-4cb6-8058-03b678013932",
+          "ac9afff7-8b0e-4764-9a7b-ed6ef8241f01"
+        ],
+        "settings": {
+          "catrow_classes": "my-3",
+          "cat_height": "",
+          "has_button": false
+        }
+      },
+      "653864d1-34ef-43e6-9b5f-c0c27e1442b5": {
+        "type": "section_header",
+        "settings": {
+          "sh_classes": "mt-4",
+          "sh_pre": "Customer",
+          "sh_title": "Reviews"
         }
       }
     },
     "content_for_index": [
-      "16492589286bfec01d",
-      "16109853017b43dcc6",
-      "164925296541020793",
       "16493353611382f79e",
+      "8fd8e252-7d1c-4a09-855c-48d3d4fab19a",
       "1649258645b4279bd5",
       "164925578068b7dd08",
+      "0ed3085d-1b87-4d8b-a626-1f68510b9d30",
       "164925880603c039c4",
-      "1649261900ddb224aa",
-      "1649252971532e49dd"
+      "653864d1-34ef-43e6-9b5f-c0c27e1442b5"
     ]
   }
 }
