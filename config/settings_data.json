@@ -155,7 +155,7 @@
             "settings": {
               "cat-class": "column",
               "fullcat-link": "",
-              "catimg": "shopify:\/\/shop_images\/promo1.jpg",
+              "catimg": "shopify:\/\/shop_images\/promo1_268a41e7-4f19-42e7-954a-48cfe3f5982f.jpg",
               "fullcat_sub": "Welcome to partshaus, we stock",
               "fullcat_title": "Genuine original parts & accessories",
               "button_text": "Shop Now"
@@ -164,9 +164,9 @@
           "9cb8aa0c-bd7a-455d-a4c8-d19a37591c29": {
             "type": "select",
             "settings": {
-              "cat-class": "column has-text-centered",
+              "cat-class": "column has-text-centered px-5",
               "fullcat-link": "",
-              "catimg": "shopify:\/\/shop_images\/promo2.jpg",
+              "catimg": "shopify:\/\/shop_images\/promo2_f4273604-aa72-4651-8663-16f9d16caf11.jpg",
               "fullcat_sub": "We've been in the industry",
               "fullcat_title": "for nearly a decade",
               "button_text": "Shop Now"
