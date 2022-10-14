@@ -142,7 +142,7 @@
           "fb920441-2f78-4107-bfcb-c61d18360cb6"
         ],
         "settings": {
-          "usp_row_classes": "my-2 p-3 is-hidden-mobile",
+          "usp_row_classes": "mb-2 p-3 is-hidden-mobile bg-is-offwhite",
           "usp_column_class": "",
           "usp_box_class": "landscape"
         }
