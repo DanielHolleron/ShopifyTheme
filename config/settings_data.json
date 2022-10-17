@@ -142,7 +142,7 @@
           "fb920441-2f78-4107-bfcb-c61d18360cb6"
         ],
         "settings": {
-          "usp_row_classes": "my-2 p-3 is-hidden-mobile",
+          "usp_row_classes": "mb-2 p-3 is-hidden-mobile bg-is-offwhite",
           "usp_column_class": "",
           "usp_box_class": "landscape"
         }
@@ -189,44 +189,44 @@
           "2b521dd2-3c22-424c-9baa-7d82c9648e01": {
             "type": "select",
             "settings": {
-              "cat-class": "column",
+              "cat-class": "column catbox-alt has-gradient",
               "fullcat-link": "",
               "catimg": "shopify:\/\/shop_images\/cat1.jpg",
-              "fullcat_sub": "Check Out Our Range of",
-              "fullcat_title": "Testing Category",
+              "fullcat_sub": "Shop Now",
+              "fullcat_title": "Volkswagen",
               "button_text": "Shop Now"
             }
           },
           "cbe407b8-a10d-419e-953c-b0238bdc4f7f": {
             "type": "select",
             "settings": {
-              "cat-class": "column",
+              "cat-class": "column catbox-alt has-gradient",
               "fullcat-link": "",
               "catimg": "shopify:\/\/shop_images\/cat2.jpg",
-              "fullcat_sub": "Check Out Our Range of",
-              "fullcat_title": "Testing Category",
+              "fullcat_sub": "Shop Now",
+              "fullcat_title": "Skoda",
               "button_text": "Shop Now"
             }
           },
           "decd90a0-c741-4cb6-8058-03b678013932": {
             "type": "select",
             "settings": {
-              "cat-class": "column",
+              "cat-class": "column catbox-alt has-gradient",
               "fullcat-link": "",
               "catimg": "shopify:\/\/shop_images\/cat3.jpg",
-              "fullcat_sub": "Check Out Our Range of",
-              "fullcat_title": "Testing Category",
+              "fullcat_sub": "Shop Now",
+              "fullcat_title": "Audi",
               "button_text": "Shop Now"
             }
           },
           "ac9afff7-8b0e-4764-9a7b-ed6ef8241f01": {
             "type": "select",
             "settings": {
-              "cat-class": "column",
+              "cat-class": "column catbox-alt has-gradient",
               "fullcat-link": "",
               "catimg": "shopify:\/\/shop_images\/cat4.jpg",
-              "fullcat_sub": "Check Out Our Range of",
-              "fullcat_title": "Testing Category",
+              "fullcat_sub": "Shop Now",
+              "fullcat_title": "Seat",
               "button_text": "Shop Now"
             }
           }
