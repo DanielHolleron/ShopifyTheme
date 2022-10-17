@@ -162,7 +162,6 @@
   #brandrow .brandbox { height: 100px; }
 } 
 
-
 /* Image with Text Banner */
 #herobanner { background-size: cover; }
 #herobanner.hero.is-medium .hero-body { padding: 7rem 1.5rem; }
@@ -190,10 +189,10 @@
 }
 
 /* Product Thumbnail */
-.card.product-grid-item { box-shadow: none; border: 1px solid #eee; }
+.card.product-grid-item { box-shadow: none; }
 .card.product-grid-item .card-image { max-height: 290px !important; overflow: hidden; }
 .card.product-grid-item .card-image img { margin: auto; height: 100% !important; }
-.card.product-grid-item .card-content { background-color: #fff !important; }
+.card.product-grid-item .card-content { background-color: #f8f8f8 !important; }
 .card.product-grid-item .card-content .title { font-size: 15px; letter-spacing: 1px; margin-bottom: -15px !important; text-transform: uppercase; }
 .card.product-grid-item .card-content .subtitle, .card.product-grid-item .card-content .price { color: #666 !important; }
 .card.product-grid-item .card-content .price { font-size: 15px;  letter-spacing: 0.5px; }

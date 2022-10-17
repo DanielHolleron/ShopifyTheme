@@ -11,19 +11,11 @@
 
    <div class="card-image">
       <figure class="image">
-         <img id="{{ img_id }}" alt="{{ preview_image.alt }}" src="{{ img_url }}" />
-        <img class="logoover" src="{{ 'FINAL_Light.png' | asset_url }}" class="img-responsive"/>        
+         <img id="{{ img_id }}" alt="{{ preview_image.alt }}" src="{{ img_url }}" />       
       </figure>
-      <div class="product-options">
-         <div class="opt-wrap">
-            <a href="#"><div class="prod-optbox is-primary bttn"><i class="fas fa-envelope"></i></div></a>
-            <a href="#"><div class="prod-optbox is-primary bttn"><i class="fas fa-heart"></i></div></a>
-            <a href="{{ product.url | within: collection }}"><div class="prod-optbox is-primary bttn"><i class="fas fa-shopping-basket"></i></div></a>
-         </div>
-      </div>
    </div>
 
-   <a href="{{ product.url | within: collection }}"">
+   <a href="{{ product.url | within: collection }}">
 
       <div class="card-content">
          <div class="media">
@@ -31,10 +23,12 @@
                <p class="title is-4 is-spaced">
                   {{ product.title }}
                </p>
-               <p class="subtitle is-6">{% include 'product-price-listing' %}</p>
-
-               
+                             
             </div>
+         </div>
+         <div class="row">
+            <div class="row-left"><p class="subtitle">{% include 'product-category' %}</p></div>
+            <div class="row-right"><p class="subtitle">{% include 'product-price-listing' %}</p></div>
          </div>							
       </div>
 
