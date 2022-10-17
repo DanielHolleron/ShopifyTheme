@@ -134,6 +134,11 @@
 #catgrid .catwrap img { transition: all 0.2s; display: block; max-height: 100%; min-width: 100%; }
 #catgrid .catwrap:hover img { transform: scale(1.05); transition: all 0.2s; }
 
+#catgrid .catbox-alt .caption { justify-content: space-between; flex-direction: row; width: 100%; bottom: 0px !important; top: unset !important; height: 80px; }
+#catgrid .catbox-alt .caption h3 { order: -1; font-size: 21px; }
+#catgrid .catbox-alt .caption p { margin-top: 5px; }
+#catgrid .catbox-alt .caption::before { content: ''; width: 90%; height: 2px; position: absolute; bottom: 25px; left: 5%; background-color: #fff; }
+
 /* USP Boxes */
 #usp-section { background-color: #f8f8f8; }
 #usp-section .uspbox.landscape { display: flex; flex-direction: row;justify-content: center; }
