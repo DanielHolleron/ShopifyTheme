@@ -65,7 +65,7 @@
 #header .navbar-wrap .navbar-item a { color: #fff; letter-spacing: 1px; opacity: 1;transition: all .4s; text-transform: uppercase; font-size: 13px; z-index:5; }
 #header .searchbar form { text-align: right; }
 #header .searchbar .form-control { width: 80%; font-size: 13px; padding: 8px 15px; margin-right: -5px; border: none; background: #f8f8f8; height: 45px; text-transform: uppercase; letter-spacing: 1px; }
-#header .searchbar button { height: 46px; padding: 0 16px; border: none; background-color: var(--is-primary); color: #fff; border-radius: 0px; }
+#header .searchbar button { height: 46px; padding: 0 16px; border: none; color: #fff; border-radius: 0px; }
 
 #header .navbar-wrap .navbar-item::before { content: ''; display: block; position: absolute; top: -41px; left: 0; width: 100%; height: 0px; z-index:1; transition: all 0.2s; background-size: 100% !important; }
 #header .navbar-wrap .navbar-item:hover::before { height: 118px; transition: all 0.1s; }
@@ -146,8 +146,8 @@
 #usp-section .uspbox.landscape .usp-img { margin-right:15px; }
 #usp-section .uspbox.landscape .usp-img img { max-width: 100px; }
 
-#usp-section .uspbox.landscape .usp-txt h4 { text-transform: uppercase; letter-spacing: 2px; color: #333; font-weight: 600; }
-#usp-section .uspbox.landscape .usp-txt p { font-size: 14px; letter-spacing: 0.5px; color: #7a7a7a; }
+#usp-section .uspbox.landscape .usp-txt h4 { text-transform: uppercase; letter-spacing: 1px; color: #333; font-weight: 600; }
+#usp-section .uspbox.landscape .usp-txt p { font-size: 14px; letter-spacing: 0.5px; color: #7a7a7a; text-transform: uppercase; }
 
 /* Brand Bar */
 #brandrow { background: #333; margin: 12px 0px; }
