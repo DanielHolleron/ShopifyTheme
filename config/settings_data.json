@@ -28,7 +28,7 @@
         "type": "footer",
         "settings": {
           "footerlogo_column": true,
-          "footer_blurb": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris gravida nisl sit amet eleifend maximus. Sed tincidunt, lectus eu viverra ullamcorper.",
+          "footer_blurb": "Partshaus began life in 2014 supplying brand new genuine, original parts & accessories for VW Audi Skoda SEAT. Today it's an established business with a small team who are proud of the service they provide and are passionate about all things VAG.",
           "footermenu_1": true,
           "menutitle_1": "Navigation",
           "menu_1": "",
@@ -246,7 +246,7 @@
       "653864d1-34ef-43e6-9b5f-c0c27e1442b5": {
         "type": "section_header",
         "settings": {
-          "sh_classes": "mt-4",
+          "sh_classes": "mt-4 mb-6",
           "sh_pre": "Customer",
           "sh_title": "Reviews"
         }
