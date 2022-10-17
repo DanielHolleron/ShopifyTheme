@@ -134,7 +134,7 @@
 #catgrid .catwrap img { transition: all 0.2s; display: block; max-height: 100%; min-width: 100%; }
 #catgrid .catwrap:hover img { transform: scale(1.05); transition: all 0.2s; }
 
-#catgrid .catbox-alt .caption { justify-content: space-between; flex-direction: row; width: 100%; bottom: 0px !important; top: unset !important; height: 80px; }
+#catgrid .catbox-alt .caption { justify-content: space-between; flex-direction: row; width: 100%; bottom: 0px !important; top: unset !important; height: 100%; align-items: end; padding-bottom: 45px; }
 #catgrid .catbox-alt .caption h3 { order: -1; font-size: 21px; }
 #catgrid .catbox-alt .caption p { margin-top: 5px; }
 #catgrid .catbox-alt .caption::before { content: ''; width: 90%; height: 2px; position: absolute; bottom: 25px; left: 5%; background-color: #fff; }
@@ -170,7 +170,7 @@
 #herobanner .txt-wrap h1 { text-transform: uppercase; font-size: 35px; font-weight: 800; color: #fff; letter-spacing: 2px; line-height: 1.5;  margin-bottom: 25px; }
 #herobanner .txt-wrap p { color: #fff; font-size: 15px; letter-spacing: 0.5px; line-height: 2; text-transform: uppercase; }
 #herobanner .txt-wrap p span { color: var(--is-primary); }
-#herobanner .txt-wrap .button.is-primary { text-transform: uppercase; font-size: 15px; letter-spacing: 2px; padding: 25px !important; border: none !important; margin-top: 15px; border-radius: 0px; }
+#herobanner .txt-wrap .button.is-primary { text-transform: uppercase; font-size: 15px; letter-spacing: 1px; padding: 25px !important; border: none !important; margin-top: 15px; border-radius: 0; font-weight: 600; }
 
 /* Media Grid */
 #mediagrid .content-wrap h3 { font-size: 24px; font-weight: 400; text-transform: uppercase; letter-spacing: 2px; }
@@ -272,15 +272,14 @@ html.sticky-modal, html.sticky-modal body { height: 100vh; overflow:hidden; }
 /* Footer */
 .section-footer { color: #fff; }
 #shopify-section-footer .footer-logo img { max-height: 80px; }
-#shopify-section-footer h5 { font-size: 18px; font-weight: 400; text-transform: uppercase; letter-spacing: 2px; }
-#shopify-section-footer .footer-blurb p { font-size: 14px; letter-spacing: 1px; line-height: 2; margin-top: 10px; }
+#shopify-section-footer h5 { font-size: 18px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+#shopify-section-footer .footer-blurb p { font-size: 14px; letter-spacing: 0.5px; line-height: 2; margin-top: 10px; }
 #shopify-section-footer .footermenu .menu-label a { position: relative;  transition: all 0.4s; }
 #shopify-section-footer .footermenu .menu-label:hover a { color: var(--is-primary); transition: all 0.2s; }
 
 #shopify-section-footer a { color: #fff; }
 
-#footerbottom { color: #eaeaea; text-transform: uppercase; letter-spacing: 2px;font-size: 11px; }
-
+#footerbottom { color: #eaeaea; text-transform: uppercase; letter-spacing: 1px; font-size: 12px; font-weight: 600; }
 
 @media(max-width: 990px) {
     #shopify-section-footer * { text-align: center; }
