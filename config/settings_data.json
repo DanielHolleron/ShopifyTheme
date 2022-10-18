@@ -17,11 +17,11 @@
         "settings": {
           "has_header_menu": true,
           "show_search": true,
-          "logowrap_class": "is-narrow is-4-touch",
+          "logowrap_class": "is-narrow is-3-touch",
           "headermenu_class": "is-hidden-touch",
           "header_menu": "main-menu",
           "search_class": "is-3",
-          "basket_class": "is-narrow is-8-touch"
+          "basket_class": "is-narrow is-9-touch"
         }
       },
       "footer": {
@@ -150,7 +150,7 @@
           "864df0a3-7b40-42e0-a650-b5185894044d": {
             "type": "select",
             "settings": {
-              "cat-class": "column",
+              "cat-class": "column is-12-touch",
               "fullcat-link": "",
               "catimg": "shopify:\/\/shop_images\/promo1_268a41e7-4f19-42e7-954a-48cfe3f5982f.jpg",
               "fullcat_sub": "Welcome to partshaus, we stock",
@@ -161,7 +161,7 @@
           "9cb8aa0c-bd7a-455d-a4c8-d19a37591c29": {
             "type": "select",
             "settings": {
-              "cat-class": "column has-text-centered",
+              "cat-class": "column is-12-touch has-text-centered",
               "fullcat-link": "",
               "catimg": "shopify:\/\/shop_images\/promo2_f4273604-aa72-4651-8663-16f9d16caf11.jpg",
               "fullcat_sub": "We've been in the industry",
@@ -186,7 +186,7 @@
           "2b521dd2-3c22-424c-9baa-7d82c9648e01": {
             "type": "select",
             "settings": {
-              "cat-class": "column catbox-alt has-gradient",
+              "cat-class": "column catbox-alt has-gradient is-6-touch",
               "fullcat-link": "",
               "catimg": "shopify:\/\/shop_images\/cat1.jpg",
               "fullcat_sub": "Shop Now",
@@ -197,7 +197,7 @@
           "cbe407b8-a10d-419e-953c-b0238bdc4f7f": {
             "type": "select",
             "settings": {
-              "cat-class": "column catbox-alt has-gradient",
+              "cat-class": "column catbox-alt has-gradient is-6-touch",
               "fullcat-link": "",
               "catimg": "shopify:\/\/shop_images\/cat2.jpg",
               "fullcat_sub": "Shop Now",
@@ -208,7 +208,7 @@
           "decd90a0-c741-4cb6-8058-03b678013932": {
             "type": "select",
             "settings": {
-              "cat-class": "column catbox-alt has-gradient",
+              "cat-class": "column catbox-alt has-gradient is-6-touch",
               "fullcat-link": "",
               "catimg": "shopify:\/\/shop_images\/cat3.jpg",
               "fullcat_sub": "Shop Now",
@@ -219,7 +219,7 @@
           "ac9afff7-8b0e-4764-9a7b-ed6ef8241f01": {
             "type": "select",
             "settings": {
-              "cat-class": "column catbox-alt has-gradient",
+              "cat-class": "column catbox-alt has-gradient is-6-touch",
               "fullcat-link": "",
               "catimg": "shopify:\/\/shop_images\/cat4.jpg",
               "fullcat_sub": "Shop Now",
