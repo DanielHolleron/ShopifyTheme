@@ -86,9 +86,10 @@
   #main-navigation .buttons { justify-content: flex-end; }
   #main-navigation .navbar-item { padding: 0; }
   #main-navigation .bttn, #main-navigation .buttons a { border-radius: 0; height: 35px; padding: 8px; margin-bottom: 0; }
+  #main-navigation .navbar-item .button { font-size: 11px; }
 }
 
-#searchmob .form-inline { display: flex; flex-direction: row; justify-content: space-between; }
+#searchmob .form-inline { display: flex; flex-direction: row; justify-content: space-between; background: #f8f8f8; }
 #searchmob .form-control { width: calc(100% - 50px); margin: 0 !important; padding: 15px 10px; border-radius: 0; border: 1px solid #eee; text-transform: uppercase; letter-spacing: 2px; }
 #searchmob button { width: 50px; margin: 0 !important; border: none; border-radius: 0px; color: #fff; padding: 11px; }
 
@@ -148,7 +149,7 @@
 #catgrid .catbox-alt .caption::before { content: ''; width: 90%; height: 2px; position: absolute; bottom: 25px; left: 5%; background-color: #fff; }
 
 @media (max-width: 770px) {
-  #catgrid .catwrap { height: 270px; }
+  #catgrid .catwrap { height: 230px; }
   #catgrid .catwrap .caption { width: 100%; }
   #catgrid .catwrap .caption p { font-size: 11px; } 
   #catgrid .catwrap .caption h3 { font-size: 24px; }
