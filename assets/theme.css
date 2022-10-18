@@ -192,6 +192,7 @@
 @media (max-width: 770px) {
   #herobanner .txt-wrap { text-align: center; }
   #herobanner.hero.is-medium .hero-body { padding: 4rem 1.5rem; }
+  #herobanner .txt-wrap h1 { font-size: 25px; }
 }
 
 /* Media Grid */
