@@ -71,9 +71,10 @@
 #header .navbar-wrap .navbar-item:hover::before { height: 118px; transition: all 0.1s; }
 
 #header .search-wrap { height: 100%; display: flex; flex-direction: column; justify-content: center; }
-#main-navigation { height: 100%; justify-content: center; flex-direction: column; display: flex; }
 
-#main-navigation .buttons a { border-radius: 0px; height: 45px; }
+#main-navigation { height: 100%; justify-content: center; flex-direction: column; display: flex; }
+#main-navigation .navbar-item .button { border-radius: 0px; display: flex; flex-direction: column; height: unset; padding: 0px 10px; text-transform: uppercase; font-weight: 400; letter-spacing: 1px; font-size: 14px; }
+#main-navigation .navbar-item .button i { font-size: 28px; margin-bottom: 5px; }
 
 @media(max-width: 770px) {
   #header .navbar-brand .site-logo { padding: 0; }
@@ -111,7 +112,7 @@
 }
 
 /* Cat Bar */
-#promobar .cat-navbar .cat-navitem { display: inline; margin-right: calc(5px, 25px, 40px); }
+#promobar .cat-navbar .cat-navitem { display: inline; margin-right: 20px; }
 #promobar .cat-navbar .cat-navitem a { text-transform: uppercase; color: #fff; transition: all 0.5s; letter-spacing: 1px; font-size: 13px; }
 #promobar .cat-navbar .cat-navitem a:hover { opacity: 0.8; transition: all 0.2s; }
 

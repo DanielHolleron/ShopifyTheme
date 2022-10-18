@@ -50,19 +50,19 @@
                <div class="navbar-end">
                   <div class="navbar-item">
                      <div class="buttons">
-                       	<a class="nav_bttn button is-primary bttn" role="button" aria-label="menu" aria-expanded="false" data-target="menumobile" data-sticky="true"><i class="fas fa-bars"></i></a>
+                       	<a class="nav_bttn button is-primary bttn is-hidden-desktop" role="button" aria-label="menu" aria-expanded="false" data-target="menumobile" data-sticky="true"><i class="fas fa-bars"></i></a>
                         
                            {% if customer %}
-                           <a href="{{ routes.account_url }}" class="button is-primary bttn site-header__account">
+                           <a href="{{ routes.account_url }}" class="button bttn site-header__account">
                               <i class="fas fa-user"></i> Account
                            </a>
                            {% else %}
-                           <a href="{{ routes.account_login_url }}" class="button is-primary bttn site-header__account">
+                           <a href="{{ routes.account_login_url }}" class="button bttn site-header__account">
                               <i class="fas fa-user"></i> Account
                            </a>
                            {% endif %}
                        
-                       <a class="button is-primary bttn" href="{{ routes.cart_url }}"><i class="fas fa-shopping-basket"></i> </a>
+                       <a class="button bttn" href="{{ routes.cart_url }}"><i class="fas fa-shopping-basket"></i> </a>
       
                      </div>
                   </div>
