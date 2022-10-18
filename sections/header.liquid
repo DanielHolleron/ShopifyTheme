@@ -76,24 +76,16 @@
 </nav>
 
 <div id="promobar" class="is-secondary p-4">
-  <div class="container">
-  	<div class="level px-2">
-      <div class="level-left">
-        <div class="promobar_item">
-          Try Discount Code: NEWSITE
-        </div>
-      </div>
-      <div class="level-item">
-        <div class="promobar_item">
-          Official UK Stockest of Applied Nutrition
-        </div>
-      </div>
-      <div class="level-right is-hidden-mobile">
-        <div class="promobar_item">
-          Free UK Shipping
-        </div>
-      </div>
-    </div>
+  <div class="container">  	
+      <ul>
+         {%- for collection in collections -%}
+         <li>      
+            <a href="{{ collection.url }}">
+               {{ collection.title }}
+            </a>
+         </li>
+         {%- endfor -%}
+      </ul>
   </div>
 </div>
 
