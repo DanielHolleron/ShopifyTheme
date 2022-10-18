@@ -51,7 +51,7 @@
         </div>
         
         <div class="column product-info-column p-6">
-            <p>{% for collection in product.collections %}
+            <p class="collectionlist">{% for collection in product.collections %}
                 {{- collection.title | link_to: collection.url }}
               {% endfor %}</p>
             <h1 class="product-single__title title is-2">{{ product.title }}</h1>
@@ -178,6 +178,12 @@
 
     <div id="description">
         <div class="desc_inner">
+            <div id="section-header" class="my-3 px-3">
+                <div class="container sh-wrap">
+                    <p>Product</p>
+                    <h3>Description</h3>
+                </div>
+            </div>
             <div class="product-description pt-3 pb-5">
                 {{ product.description }}
             </div>  

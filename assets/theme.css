@@ -290,6 +290,11 @@
 .social-sharing a { color: unset !important; font-size: 18px; padding: 10px; }
 .social_share_icon { display: inline-block; width: 40px; text-align: center; color: #fff; border-radius: 30px; height: 40px; line-height: 40px; }
 
+.collectionlist a { text-transform: uppercase; letter-spacing: 1px; color: #666; margin-right: 10px; font-size: 14px; }
+
+.deliveryplaceholder { background: #eee; padding: 16px; margin: 35px 0px 10px; }
+.fitcheck a { color: var(--is-primary); font-weight: 600; }
+
 /* Mobile Menu */
 #filtermobile { position: fixed; width: 100vw; height: 0vh; transition: all 0.2s; background-color: #333; overflow: hidden; z-index: 5; display: block; }
 #filtermobile .content-wrap { position: relative; }
