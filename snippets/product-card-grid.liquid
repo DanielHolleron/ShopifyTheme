@@ -1,37 +1,48 @@
 {% comment %}
-    Renders a product card using "Grid" style
+  Renders a product card using "Grid" style
 {% endcomment %}
 
-{% capture img_id %}ProductCardImage-{{ section.id }}-{{ product.id }}{% endcapture %}
-{% capture wrapper_id %}ProductCardImageWrapper-{{ section.id }}-{{ product.id }}{% endcapture %}
+{% capture img_id %}ProductCardImage-{{ section.id }}
+  -{{ product.id }}
+{% endcapture %}
+{% capture wrapper_id %}ProductCardImageWrapper-{{ section.id }}
+  -{{ product.id }}
+{% endcapture %}
 {%- assign preview_image = product.featured_media.preview_image -%}
 {%- assign img_url = preview_image | img_url: '1x1' | replace: '_1x1.', '_300x.' -%}
 
 <div class="card is-block product-grid-item">
 
-   <div class="card-image">
-      <figure class="image">
-         <img id="{{ img_id }}" alt="{{ preview_image.alt }}" src="{{ img_url }}" />       
-      </figure>
-   </div>
+  <div class="card-image">
+    <figure class="image">
+      <img id="{{ img_id }}" alt="{{ preview_image.alt }}" src="{{ img_url }}"/>
+    </figure>
+  </div>
 
-   <a href="{{ product.url | within: collection }}">
+  <a href="{{ product.url | within: collection }}">
 
-      <div class="card-content">
-         <div class="media">
-            <div class="media-content product-grid-item-desc">
-               <p class="title is-4 is-spaced">
-                  {{ product.title }}
-               </p>
-                             
-            </div>
-         </div>
-         <div class="row">
-            <div class="row-left"><p class="subtitle">{% include 'product-category' %}</p></div>
-            <div class="row-right"><p class="subtitle">{% include 'product-price-listing' %}</p></div>
-         </div>							
+    <div class="card-content">
+      <div class="media">
+        <div class="media-content product-grid-item-desc">
+          <p class="title is-4 is-spaced">
+            {{ product.title }}
+          </p>
+
+        </div>
       </div>
+      <div class="row">
+        <div class="row-left">
+          <p class="subtitle">{% include 'product-category' %}
+          </p>
+        </div>
+        <div class="row-right">
+          <p class="subtitle">{% include 'product-price-listing' %}
+          </p>
+        </div>
+      </div>
+    </div>
 
-   </a> <!-- .card.product-grid-item -->
+  </a>
+  <!-- .card.product-grid-item -->
 
-</div>
+</div>>>
