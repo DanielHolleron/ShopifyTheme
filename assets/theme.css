@@ -130,6 +130,7 @@
 }
 
 /* Cat Grid */
+#catgrid .column { padding: .4rem; }
 #catgrid .catwrap { position: relative; overflow: hidden; }
 #catgrid .catwrap .caption { position: absolute; width: 65%; height: 100%; top: 0; left: 0; display: flex; flex-direction: column; justify-content: center; padding: 0 5%; }
 #catgrid .has-text-centered .caption { width: 100% !important; }
