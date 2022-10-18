@@ -46,7 +46,7 @@
 #menumobile .column.red { background-color: red; }
 #menumobile a { color: #fff !important; text-transform: uppercase; letter-spacing: 2px; opacity: 1; line-height: 2; font-size: 13px; transition: all 0.4s; display: block; }
 #menumobile a:hover { opacity: 0.8; transition: all 0.2s; }
-#menumobile .m-title { color: #fff; font-size: 35px; padding-bottom: 5px; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 2px; }
+#menumobile .m-title { color: #fff; font-weight: 600; font-size: 35px; padding-bottom: 5px; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 2px; }
 #menumobile .m-menu-wrap { color: #fff; font-size: 15px; line-height: 24px; margin-bottom: 15px; letter-spacing: 0.6px; }
 #menumobile .navbar-burger { width: unset !important; height: unset !important; margin: unset !important; }
 
@@ -207,11 +207,6 @@
 #contact-block #ContactForm .contact-bttn { border: none; padding: 15px; }
 #mediagrid #map-block .mapblock-wrap iframe { max-width: 100%; max-height: 550px; }
 #mediagrid #promo-block img { display: block; }
-
-/* Cat, USP, Media Grid and Brand Mobile Fix */
-@media(max-width: 990px) {
-    #catgrid, #usp-section, #brandrow, #mediagrid { padding-left: 20px; padding-right: 20px; }
-}
 
 /* Product Thumbnail */
 .card.product-grid-item { box-shadow: none; }
