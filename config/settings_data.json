@@ -17,11 +17,11 @@
         "settings": {
           "has_header_menu": true,
           "show_search": true,
-          "logowrap_class": "is-narrow is-2-touch",
+          "logowrap_class": "is-narrow is-3-touch",
           "headermenu_class": "is-hidden-touch",
           "header_menu": "main-menu",
           "search_class": "is-3",
-          "basket_class": "is-narrow is-10-touch"
+          "basket_class": "is-narrow is-9-touch"
         }
       },
       "footer": {
