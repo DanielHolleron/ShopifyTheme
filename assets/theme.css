@@ -263,7 +263,7 @@
 #leftmenu .catlist ul .catitem:hover { background-color: #eee; transition: all 0.2s; }
 
 /* Product Page */
-#image_gallery { border: 10px solid var(--is-primary); padding: 35px; text-align: center; overflow: hidden; }
+#image_gallery { padding: 35px; text-align: center; overflow: hidden; }
 #image_gallery img { max-height: 700px; max-width: 100%; }
 #image_gallery .glide__arrow { height: 100%; width: 10%; border: none !important; font-size: 28px; }
 #image_gallery .glide__arrow--left { transition: all 0.4s; left: 0em; box-shadow: unset !important; background: -moz-linear-gradient(left, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0) 99%, rgba(0,0,0,0) 100%); background: -webkit-linear-gradient(left, rgba(0,0,0,0.05) 0%,rgba(0,0,0,0) 99%,rgba(0,0,0,0) 100%); background: linear-gradient(to right, rgba(0,0,0,0.05) 0%,rgba(0,0,0,0) 99%,rgba(0,0,0,0) 100%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#80000000', endColorstr='#00000000',GradientType=1 ); }
@@ -275,7 +275,8 @@
 
 .product-info-column .selector-wrapper label, .product-info-column .product-form__item label { font-size: 14px; letter-spacing: 0.4px; }
 .product-info-column .selector-wrapper .field, .product-info-column .selector-wrapper .field *, .product-info-column .product-form__item input { width: 100%; font-size: 14px; letter-spacing: 0.4px; }
-.product__price .price-item { font-weight: 800; font-size: 18px; }
+.product__price .price-item { font-weight: 800; font-size: 35px; color: var(--is-primary); }
+.product-single__title { font-size: 50px !important; text-transform: uppercase; letter-spacing: 1px; }
 .selector-wrapper .field .select { height: unset; }
 .selector-wrapper .field .select select, .product-info-column .product-form__item input { padding: 13px 15px; height: unset !important; margin-top: 7px; border: 2px solid #eee; border-radius: 0; transition: all 0.4s; }
 .selector-wrapper .field .select select:focus, .selector-wrapper .field .select select:focus-visible { outline: none !important; -moz-user-focus: ignore; }

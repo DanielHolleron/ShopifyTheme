@@ -95,20 +95,6 @@
 
    <div class="container">
       <div class="columns">
-         <div class="column is-hidden-touch is-2">
-            <div id="leftmenu">
-               <div class="header is-primary py-3 px-4 mb-1">
-                  <p>Shop Categories</p>
-               </div>
-               <div class="catlist">
-                  <ul>
-                     {%- for collection in collections -%}                     
-                        <a href="{{ collection.url }}"><li class="catitem py-2 px-4 mb-1 bg-is-offwhite">{{ collection.title }}</li></a>                     
-                     {% endfor %}
-                  </ul>
-               </div>
-            </div>
-         </div>
          <div class="column">          
             <div id="Collection" class="product-grid columns is-multiline">
                {% for product in collection.products %}

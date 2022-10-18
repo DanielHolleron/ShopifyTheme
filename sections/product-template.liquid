@@ -33,10 +33,6 @@
                     <button class="glide__arrow glide__arrow--left is-primary bttn" data-glide-dir="<"><i class="fas fa-chevron-left"></i></button>
                     <button class="glide__arrow glide__arrow--right is-primary bttn" data-glide-dir=">"><i class="fas fa-chevron-right"></i></button>
                 </div>
-              
-              <div class="logohover">
-                  	<img src="{{ 'FINAL_Light.png' | asset_url }}" class="img-responsive"/>
-              	</div>
               	
             </div> <!-- #product-grid2.glide -->
 
@@ -55,6 +51,9 @@
         </div>
         
         <div class="column product-info-column p-6">
+            <p>{% for collection in product.collections %}
+                {{- collection.title | link_to: collection.url }}
+              {% endfor %}</p>
             <h1 class="product-single__title title is-2">{{ product.title }}</h1>
 
             <div class="product__price">
@@ -71,9 +70,13 @@
                 </div>
             {%- endif -%}
 
-            <div class="product-description pt-3 pb-5">
-                {{ product.description }}
-            </div>            
+            <div class="deliveryplaceholder">
+                <p>✓ Delivery estimated between 22/09/22 and 23/09/22 </p>
+            </div>
+
+            <div class="fitcheck">
+                <p>Unsure if it fits? <a href="#">Check With Us</a></p>
+            </div>
 
             {% capture "form_classes" -%}
                 product-form product-form-{{ section.id }} pt-4
@@ -172,6 +175,14 @@
         </div> <!-- .product-info-column -->
 
     </div> <!-- .columns -->
+
+    <div id="description">
+        <div class="desc_inner">
+            <div class="product-description pt-3 pb-5">
+                {{ product.description }}
+            </div>  
+        </div>
+    </div>
 
 </div> <!-- .container -->
 
