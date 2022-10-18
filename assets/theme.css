@@ -209,6 +209,8 @@
 
 .card.product-grid-item .card-image .logoover { position: absolute; bottom: 50px; left: 20px; height: unset !important; width: 30%; }
 
+.subtitle :not(a:first-of-type) { display: none; }
+
 @media(max-width: 990px) {
     .card.product-grid-item .card-image .logoover { bottom: 10px; left: 10px; }
 }

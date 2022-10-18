@@ -34,9 +34,7 @@
         <div class="row-left">
           <p class="subtitle">
             {% for collection in product.collections %}
-              {% assign coll = '/collections/' | append: collection.title | replace: " ", "-" %}
-              {{ collection.title | capitalize | link_to: coll }}
-              {% unless forloop.last %},{% endunless %}
+              {{- collection.title | link_to: collection.url }}
             {% endfor %}
           </p>
         </div>
@@ -50,4 +48,4 @@
   </a>
   <!-- .card.product-grid-item -->
 
-</div>>
+</div>>>
