@@ -148,9 +148,10 @@
 #catgrid .catbox-alt .caption::before { content: ''; width: 90%; height: 2px; position: absolute; bottom: 25px; left: 5%; background-color: #fff; }
 
 @media (max-width: 770px) {
+  #catgrid .catwrap { height: 270px; }
   #catgrid .catwrap .caption { width: 100%; }
   #catgrid .catwrap .caption p { font-size: 11px; } 
-  #catgrid .catwrap .caption h3 { font-size: 14px; } 
+  #catgrid .catwrap .caption h3 { font-size: 24px; } 
   #catgrid .catwrap .caption .bttn.is-primary { padding: 12px 18px; }
   #catgrid .catwrap img { height: 100%; width: auto; max-width: unset; }
 }
