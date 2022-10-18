@@ -271,7 +271,7 @@
 #leftmenu .catlist ul .catitem:hover { background-color: #eee; transition: all 0.2s; }
 
 /* Product Page */
-#image_gallery { padding: 35px; text-align: center; overflow: hidden; }
+#image_gallery { padding: 0px 35px; text-align: center; overflow: hidden; }
 #image_gallery img { max-height: 700px; max-width: 100%; }
 #image_gallery .glide__arrow { height: 100%; width: 10%; border: none !important; font-size: 28px; }
 #image_gallery .glide__arrow--left { transition: all 0.4s; left: 0em; box-shadow: unset !important; background: -moz-linear-gradient(left, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0) 99%, rgba(0,0,0,0) 100%); background: -webkit-linear-gradient(left, rgba(0,0,0,0.05) 0%,rgba(0,0,0,0) 99%,rgba(0,0,0,0) 100%); background: linear-gradient(to right, rgba(0,0,0,0.05) 0%,rgba(0,0,0,0) 99%,rgba(0,0,0,0) 100%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#80000000', endColorstr='#00000000',GradientType=1 ); }
