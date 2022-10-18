@@ -243,6 +243,14 @@
     .card.product-grid-item .card-image .logoover { bottom: 10px; left: 10px; }
 }
 
+@media(max-width: 770px) {
+  .card.product-grid-item .card-content .title { font-size: 12px; }
+  .card.product-grid-item .subtitle { display: none; }
+  .card.product-grid-item .card-content .price { font-size: 11px; margin-top: 8px; }
+  .card-content .row { margin-top: 10px; }
+  .card.product-grid-item .card-content { padding: 18px; }  
+}
+
 /* Product Carousel Options */
 #product-grid .glide__arrow { border: none; border-radius: 20px; padding: 15px 18px; }
 @media(min-width: 1200px) {
