@@ -11,6 +11,8 @@
 {%- assign preview_image = product.featured_media.preview_image -%}
 {%- assign img_url = preview_image | img_url: '1x1' | replace: '_1x1.', '_300x.' -%}
 
+<a href="{{ product.url | within: collection }}">
+
 <div class="card is-block product-grid-item">
 
   <div class="card-image">
@@ -18,8 +20,6 @@
       <img id="{{ img_id }}" alt="{{ preview_image.alt }}" src="{{ img_url }}"/>
     </figure>
   </div>
-
-  <a href="{{ product.url | within: collection }}">
 
     <div class="card-content">
       <div class="media">
@@ -45,7 +45,8 @@
       </div>
     </div>
 
-  </a>
   <!-- .card.product-grid-item -->
 
 </div>
+
+</a>
