@@ -14,7 +14,7 @@
 .bg-is-offwhite { background-color: #f8f8f8; }
 .is-primary, .button.is-primary { background-color: var(--is-primary); transition: all 0.4s; color: #fff; }
 .is-primary a { color: #fff !important; }
-.is-primary.bttn:hover, .is-primary.btn:hover, .button.is-primary:hover { background-color: var(--is-secondary); transition: all 0.2s; }
+.is-primary.bttn:hover, .is-primary.btn:hover, .button.is-primary:hover { background-color: var(--is-secondary) !important; transition: all 0.2s; }
 .is-secondary { background-color: var(--is-secondary); transition: all 0.4s; color: #fff; }
 
 /* Temp Fix for mobile menu scroll issue
@@ -73,7 +73,7 @@
 #header .search-wrap { height: 100%; display: flex; flex-direction: column; justify-content: center; }
 
 #main-navigation { height: 100%; justify-content: center; flex-direction: column; display: flex; }
-#main-navigation .navbar-item .button { background: transparent; border-radius: 0px; display: flex; flex-direction: column; height: unset; padding: 0px 10px; text-transform: uppercase; font-weight: 400; letter-spacing: 1px; font-size: 14px; }
+#main-navigation .navbar-item .button { background: transparent; border: none; display: flex; flex-direction: column; height: unset; padding: 0px 10px; text-transform: uppercase; font-weight: 400; letter-spacing: 1px; font-size: 14px; }
 #main-navigation .navbar-item .button i { font-size: 28px; margin-bottom: 5px; }
 
 @media(max-width: 770px) {
