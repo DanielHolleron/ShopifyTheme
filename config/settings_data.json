@@ -18,7 +18,7 @@
           "has_header_menu": true,
           "show_search": true,
           "logowrap_class": "is-narrow is-6-mobile",
-          "headermenu_class": "",
+          "headermenu_class": "is-hidden-touch",
           "header_menu": "main-menu",
           "search_class": "is-3",
           "basket_class": "is-narrow is-6-mobile"
