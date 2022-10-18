@@ -247,7 +247,7 @@
   .card.product-grid-item .card-content .title { font-size: 12px; }
   .card.product-grid-item .subtitle { display: none; }
   .card.product-grid-item .card-content .price { font-size: 11px; margin-top: 8px; }
-  .card-content .row { margin-top: 10px; }
+  .card-content .row { margin-top: 30px; }
   .card.product-grid-item .card-content { padding: 18px; }  
 }
 
