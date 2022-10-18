@@ -175,7 +175,7 @@
           "9cb8aa0c-bd7a-455d-a4c8-d19a37591c29"
         ],
         "settings": {
-          "catrow_classes": "mt-5 mb-3",
+          "catrow_classes": "mt-5 mb-3 px-3",
           "cat_height": "",
           "has_button": true
         }
@@ -235,7 +235,7 @@
           "ac9afff7-8b0e-4764-9a7b-ed6ef8241f01"
         ],
         "settings": {
-          "catrow_classes": "my-3",
+          "catrow_classes": "my-3 px-3",
           "cat_height": "",
           "has_button": false
         }
