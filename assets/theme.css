@@ -111,9 +111,9 @@
 }
 
 /* Cat Bar */
-#catbar .navbar-item { transition: all 0.4s; }
-#catbar .navbar-item:hover { background-color: var(--is-secondary); transition: all 0.2s; }
-#catbar .navbar-item .cat-item { font-size: 15px; letter-spacing: 0.4px; }
+#promobar .cat-navbar .cat-navitem { display: inline; margin-right: calc(5px, 25px, 40px); }
+#promobar .cat-navbar .cat-navitem a { text-transform: uppercase; color: #fff; transition: all 0.5s; letter-spacing: 1px; font-size: 13px; }
+#promobar .cat-navbar .cat-navitem a:hover { opacity: 0.8; transition: all 0.2s; }
 
 /* Section Header */
 #section-header .sh-wrap * { display: inline; }

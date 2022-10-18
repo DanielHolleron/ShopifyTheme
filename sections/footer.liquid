@@ -17,16 +17,17 @@
          {% if section.settings.footermenu_1 %}
             <div class="column">
             	<div class="footermenu">
-                   <h5 class="is-5 mb-4">{{ section.settings.menutitle_1 }}</h5>
+                   <h5 class="is-5 mb-4">Categories</h5>
                    <div class="menu">
-                      {%- assign footer_linklist = section.settings.menu_1 -%}
-                      {%- for link in linklists[footer_linklist].links -%}
-                         <p class="menu-label">
-                            <a href="{{ link.url }}" {% if link.current %} aria-current="page"{% endif %}>
-                               {{ link.title | escape }}
-                            </a>
-                         </p>
-                      {%- endfor -%}
+                     <ul class="cat-navbar">
+                        {%- for collection in collections -%}
+                        <li class="cat-navitem">      
+                           <a href="{{ collection.url }}">
+                              {{ collection.title }}
+                           </a>
+                        </li>
+                        {%- endfor -%}
+                     </ul>
                    </div>
             	</div>
             </div> <!-- .column -->
@@ -136,25 +137,6 @@
          "label": "Footer Blurb",
          "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris gravida nisl sit amet eleifend maximus. Sed tincidunt, lectus eu viverra ullamcorper."
 		},
-      {
-         "type": "checkbox",
-         "id": "footermenu_1",
-         "label": "Footer Menu 1",
-         "default": false,
-         "info": "Hides or Displays Menu 1"
-      },      
-      {
-			"id": "menutitle_1",
-			"type": "text",
-         "label": "Menu Title 1",
-         "default": "Quick Links"
-		},
-      {
-         "type": "link_list",
-         "id": "menu_1",
-         "label": { "en": "Menu 1" },
-         "default": "footer"
-      },
       {
          "type": "checkbox",
          "id": "footermenu_2",
