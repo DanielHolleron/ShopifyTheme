@@ -62,37 +62,23 @@
             	</div>
             </div> <!-- .column -->
          {% endif %}
-         {% if section.settings.has_newsletter %}
-            <div class="column is-12-touch">
-               <h5 class="is-5 mb-4">Newsletter</h5>
-               {%- assign formId = 'Contact_' | append: section.id -%}
-               {% form 'customer', id: formId, novalidate: 'novalidate', class: 'contact-form form-single-field' %}
-                  <input type="hidden" name="nl" />
-                  <div class="field has-addons">
-                     <p class="control is-expanded">
-                        <input class="input" type="text" placeholder="Email addreess">
-                     </p>
-                     <p class="control">
-                        <button class="button">Subscribe</button>
-                     </p>
-                  </div>
+         <div class="column is-12-touch">
+            <h5 class="is-5 mb-4">Contact Us</h5>
+            <div class="contact-form">
+               <div class="contactform">
+                   <div class="contact-form form-vertical">
+                       <form method="post" action="/contact#ContactForm" id="ContactForm" accept-charset="UTF-8" class="contact-form">
+                           <input type="hidden" name="form_type" value="contact" /><input type="hidden" name="utf8" value="✓" />
+                           <input class="mb-2" type="text" id="ContactForm-name" name="contact[Name]" value="" placeholder="Name"/>
+                           <input class="mb-2" type="email" id="ContactForm-email" name="contact[email]" autocorrect="off" autocapitalize="off" value="" aria-required="true" placeholder="Email" />
+                           <textarea class="mb-2" rows="10" id="ContactForm-message" name="contact[Message]" placeholder="Type your Message Here!"></textarea>
+                           <input class="contact-bttn is-primary btn" type="submit" class="btn" value="Send" />
+                       </form>
+                   </div>
+               </div>
+           </div>
 
-                  {%- if form.posted_successfully? -%}
-                     <div id="{{ formId }}-email-error" class="notification is-success" tabindex="-1" data-form-status>
-                        {{ 'general.newsletter_form.confirmation' | t }}
-                     </div>
-                  {%- endif -%}
-
-                  {%- if form.errors contains 'email' -%}
-                     {{ form.id | json }}
-                     <div id="{{ formId }}-email-error" class="notification is-danger">
-                        <span>{{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}.</span>
-                     </div>
-                  {%- endif -%}
-               {% endform %}
-
-            </div> <!-- .column -->
-         {% endif %}
+         </div> <!-- .column -->
       </div> <!-- .columns -->
       
    </div> <!-- .container -->
