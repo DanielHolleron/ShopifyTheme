@@ -124,6 +124,10 @@
 #section-header .sh-wrap h3 { font-size: 30px; font-weight: 800; text-transform: uppercase; }
 #section-header .sh-wrap p { font-size: 30px; color: #fff; text-transform: uppercase; letter-spacing: 2px; background-color: var(--is-primary); padding: 5px 10px; margin-right: 10px; font-weight: 800; }
 
+@media(max-width: 770px) {
+  #section-header .sh-wrap h3, #section-header .sh-wrap p { font-size: 21px; }
+}
+
 /* Cat Grid */
 #catgrid .catwrap { position: relative; overflow: hidden; }
 #catgrid .catwrap .caption { position: absolute; width: 65%; height: 100%; top: 0; left: 0; display: flex; flex-direction: column; justify-content: center; padding: 0 5%; }
@@ -142,6 +146,14 @@
 #catgrid .catbox-alt .caption h3 { order: -1; font-size: 21px; }
 #catgrid .catbox-alt .caption p { margin-top: 5px; }
 #catgrid .catbox-alt .caption::before { content: ''; width: 90%; height: 2px; position: absolute; bottom: 25px; left: 5%; background-color: #fff; }
+
+@media (max-width: 770px) {
+  #catgrid .catwrap .caption { width: 100%; }
+  #catgrid .catwrap .caption p { font-size: 11px; } 
+  #catgrid .catwrap .caption h3 { font-size: 14px; } 
+  #catgrid .catwrap .caption .bttn.is-primary { padding: 12px 18px; }
+  #catgrid .catwrap img { height: 100%; width: auto; max-width: unset; }
+}
 
 /* USP Boxes */
 #usp-section { background-color: #f8f8f8; }
@@ -174,6 +186,11 @@
 #herobanner .txt-wrap p { color: #fff; font-size: 15px; letter-spacing: 0.5px; line-height: 2; text-transform: uppercase; }
 #herobanner .txt-wrap p span { color: var(--is-primary); }
 #herobanner .txt-wrap .button.is-primary { text-transform: uppercase; font-size: 15px; letter-spacing: 1px; padding: 25px !important; border: none !important; margin-top: 15px; border-radius: 0; font-weight: 600; }
+
+@media (max-width: 770px) {
+  #herobanner .txt-wrap { text-align: center; }
+  #herobanner.hero.is-medium .hero-body { padding: 4rem 1.5rem; }
+}
 
 /* Media Grid */
 #mediagrid .content-wrap h3 { font-size: 24px; font-weight: 400; text-transform: uppercase; letter-spacing: 2px; }
@@ -287,7 +304,6 @@ html.sticky-modal, html.sticky-modal body { height: 100vh; overflow:hidden; }
 #footerbottom { color: #eaeaea; text-transform: uppercase; letter-spacing: 1px; font-size: 12px; font-weight: 600; }
 
 @media(max-width: 990px) {
-    #shopify-section-footer * { text-align: center; }
 }
 
 /* Site Animation */
