@@ -215,7 +215,7 @@
 .card.product-grid-item .card-image img { margin: auto; height: 100% !important; }
 .card.product-grid-item .card-content { background-color: #f8f8f8 !important; }
 .card.product-grid-item .card-content .title { font-size: 15px; letter-spacing: 1px; margin-bottom: -15px !important; text-transform: uppercase; }
-.card.product-grid-item .card-content .subtitle, .card.product-grid-item .card-content .price { color: #666 !important; }
+.card.product-grid-item .card-content .row, .card.product-grid-item .card-content .price { color: #666 !important; }
 .card.product-grid-item .card-content .price { font-size: 15px;  letter-spacing: 0.5px; }
 .card.product-grid-item .tag { position: absolute; top: 20px; }
 /* ----- Product Options ----- */
