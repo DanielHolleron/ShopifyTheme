@@ -175,7 +175,7 @@
           "9cb8aa0c-bd7a-455d-a4c8-d19a37591c29"
         ],
         "settings": {
-          "catrow_classes": "mt-5 mb-3 px-4",
+          "catrow_classes": "my-5 px-4",
           "cat_height": "",
           "has_button": true
         }
@@ -235,7 +235,7 @@
           "ac9afff7-8b0e-4764-9a7b-ed6ef8241f01"
         ],
         "settings": {
-          "catrow_classes": "my-5 px-4",
+          "catrow_classes": "my-6 px-4",
           "cat_height": "",
           "has_button": false
         }
@@ -243,7 +243,7 @@
       "653864d1-34ef-43e6-9b5f-c0c27e1442b5": {
         "type": "section_header",
         "settings": {
-          "sh_classes": "mt-5 mb-6 px-4",
+          "sh_classes": "mt-6 mb-2 px-4",
           "sh_pre": "Customer",
           "sh_title": "Reviews"
         }
