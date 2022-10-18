@@ -218,6 +218,8 @@
 .card.product-grid-item .card-content .row, .card.product-grid-item .card-content .price { color: #666 !important; }
 .card.product-grid-item .card-content .price { font-size: 15px;  letter-spacing: 0.5px; }
 .card.product-grid-item .tag { position: absolute; top: 20px; }
+.card.product-grid-item .subtitle { margin-bottom: 0px !important; }
+.card.product-grid-item .subtitle a { font-size: 14px; text-transform: uppercase; letter-spacing: 1px; color: #666; }
 /* ----- Product Options ----- */
 .product-options { opacity: 0; position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; background-color: transparent; transition: all 0.4s; }
 .product-options .card { border: none !important }
@@ -230,7 +232,10 @@
 
 .card.product-grid-item .card-image .logoover { position: absolute; bottom: 50px; left: 20px; height: unset !important; width: 30%; }
 
-.card-content .row p { display: inline; }
+.card-content .row > a { display: none; }
+.card-content .row { border-top: 1px solid #00000054; padding-top: 10px; margin-top: 50px; display: flex; flex-direction: row; justify-content: space-between; }
+.card-content .row p, .card-content .row dl { display: inline; width: fit-content; line-height: 1; }
+.card-content .row { border-top: 1px solid #00000054; padding-top: 10px; margin-top: 50px; }
 
 .subtitle :not(a:nth-child(2)) { display: none; }
 
