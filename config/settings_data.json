@@ -187,7 +187,7 @@
             "type": "select",
             "settings": {
               "cat-class": "column catbox-alt has-gradient is-6-touch",
-              "fullcat-link": "",
+              "fullcat-link": "shopify:\/\/collections\/volkswagen-parts",
               "catimg": "shopify:\/\/shop_images\/cat1.jpg",
               "fullcat_sub": "Shop Now",
               "fullcat_title": "Volkswagen",
@@ -198,7 +198,7 @@
             "type": "select",
             "settings": {
               "cat-class": "column catbox-alt has-gradient is-6-touch",
-              "fullcat-link": "",
+              "fullcat-link": "shopify:\/\/collections\/skoda-parts",
               "catimg": "shopify:\/\/shop_images\/cat2.jpg",
               "fullcat_sub": "Shop Now",
               "fullcat_title": "Skoda",
@@ -209,7 +209,7 @@
             "type": "select",
             "settings": {
               "cat-class": "column catbox-alt has-gradient is-6-touch",
-              "fullcat-link": "",
+              "fullcat-link": "shopify:\/\/collections\/audi-parts",
               "catimg": "shopify:\/\/shop_images\/cat3.jpg",
               "fullcat_sub": "Shop Now",
               "fullcat_title": "Audi",
@@ -220,7 +220,7 @@
             "type": "select",
             "settings": {
               "cat-class": "column catbox-alt has-gradient is-6-touch",
-              "fullcat-link": "",
+              "fullcat-link": "shopify:\/\/collections\/seat-parts",
               "catimg": "shopify:\/\/shop_images\/cat4.jpg",
               "fullcat_sub": "Shop Now",
               "fullcat_title": "Seat",
