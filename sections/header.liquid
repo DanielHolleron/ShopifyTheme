@@ -62,8 +62,8 @@
                            </a>
                            {% endif %}
                        
-                       <a class="button bttn" href="{{ routes.cart_url }}">
-                        <i class="fas fa-shopping-basket"><span class="cart-subtotal__price" data-cart-subtotal>{{ cart.total_price | money_with_currency }}</span></i>
+                       <a class="button bttn" data-cart-subtotal href="{{ routes.cart_url }}">
+                        <i class="fas fa-shopping-basket"></i> {{ cart.total_price }}
                       </a>
       
                      </div>
