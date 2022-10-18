@@ -50,7 +50,7 @@
             </script>
         </div>
         
-        <div class="column product-info-column p-6">
+        <div class="column product-info-column p-3 p-6-desktop">
             <p class="collectionlist">{% for collection in product.collections %}
                 {{- collection.title | link_to: collection.url }}
               {% endfor %}</p>
