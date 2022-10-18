@@ -38,9 +38,9 @@
 .search-popup .search-field { width: calc(100% - 1.5rem); }
 
 /* Mobile Menu */
-#menumobile { position: fixed; width: 0vw; height: 100vh; transition: all 0.2s; background-color: var(--is-primary); overflow: hidden; z-index: 99; display: block; background-repeat: no-repeat !important; background-position: bottom left !important; background-size: cover !important; }
-#menumobile .content-wrap { position: relative; height: 100%; justify-content: space-between; display: flex; flex-direction: column; }
-#menumobile.is-active { width: 85vw; transition: all 0.2s; }
+#menumobile { position: fixed; width: 0vw; height: 100vh; transition: all 0.2s; background-color: #000000d4; overflow: hidden; z-index: 99; display: block; background-repeat: no-repeat !important; background-position: bottom left !important; background-size: cover !important; }
+#menumobile .content-wrap { position: relative; height: 100%; justify-content: space-between; background: var(--is-primary); display: flex; flex-direction: column; }
+#menumobile.is-active { width: 100vw; transition: all .2s; background: #0002; padding-right: 14vw; }
 #menumobile .column { background-color: var(--is-primary); }
 #menumobile .column.alt { background-color: var(--is-secondary); }
 #menumobile .column.red { background-color: red; }
