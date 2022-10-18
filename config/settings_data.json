@@ -243,9 +243,17 @@
       "653864d1-34ef-43e6-9b5f-c0c27e1442b5": {
         "type": "section_header",
         "settings": {
-          "sh_classes": "mt-4 mb-6 px-4",
+          "sh_classes": "mt-5 mb-6 px-4",
           "sh_pre": "Customer",
           "sh_title": "Reviews"
+        }
+      },
+      "c44951a4-9444-485f-b30f-264a567d6ec7": {
+        "type": "rich-text",
+        "settings": {
+          "section_title": "PLACEHOLDER FOR REVIEWS",
+          "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.<\/p>",
+          "text_size": "medium"
         }
       }
     },
@@ -256,7 +264,8 @@
       "164925578068b7dd08",
       "0ed3085d-1b87-4d8b-a626-1f68510b9d30",
       "164925880603c039c4",
-      "653864d1-34ef-43e6-9b5f-c0c27e1442b5"
+      "653864d1-34ef-43e6-9b5f-c0c27e1442b5",
+      "c44951a4-9444-485f-b30f-264a567d6ec7"
     ]
   }
 }
