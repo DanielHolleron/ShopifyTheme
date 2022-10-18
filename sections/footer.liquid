@@ -18,15 +18,13 @@
             <div class="footermenu">
                   <h5 class="is-5 mb-4">Categories</h5>
                   <div class="menu">
-                  <ul class="cat-navbar">
                      {%- for collection in collections -%}
-                     <li class="cat-navitem">      
+                     <div class="menu-label">      
                         <a href="{{ collection.url }}">
                            {{ collection.title }}
                         </a>
-                     </li>
+                     </div>
                      {%- endfor -%}
-                  </ul>
                   </div>
             </div>
          </div> <!-- .column -->
