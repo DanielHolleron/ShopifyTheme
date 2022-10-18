@@ -5,7 +5,7 @@
 
       <div class="columns">
          {% if section.settings.footerlogo_column %}
-            <div class="column is-3">
+            <div class="column is-3 is-12-touch">
                <div class="footer-logo">
                   <img src="{{ 'logo.png' | asset_url }}" class="img-responsive"/>
                </div>
@@ -14,7 +14,7 @@
                </div>
             </div>
          {% endif %}
-         <div class="column">
+         <div class="column is-6-touch">
             <div class="footermenu">
                   <h5 class="is-5 mb-4">Categories</h5>
                   <div class="menu">
@@ -29,7 +29,7 @@
             </div>
          </div> <!-- .column -->
          {% if section.settings.footermenu_2 %}
-            <div class="column">
+            <div class="column is-6-touch">
             	<div class="footermenu">
                    <h5 class="is-5 mb-4">{{ section.settings.menutitle_2 }}</h5>
                    <div class="menu">
@@ -46,7 +46,7 @@
             </div> <!-- .column -->
          {% endif %}
          {% if section.settings.footermenu_3 %}
-            <div class="column">
+            <div class="column is-6-touch">
             	<div class="footermenu">
                    <h5 class="is-5 mb-4">{{ section.settings.menutitle_3 }}</h5>
                    <div class="menu">
@@ -63,7 +63,7 @@
             </div> <!-- .column -->
          {% endif %}
          {% if section.settings.has_newsletter %}
-            <div class="column">
+            <div class="column is-12-touch">
                <h5 class="is-5 mb-4">Newsletter</h5>
                {%- assign formId = 'Contact_' | append: section.id -%}
                {% form 'customer', id: formId, novalidate: 'novalidate', class: 'contact-form form-single-field' %}
