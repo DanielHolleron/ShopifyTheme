@@ -31,17 +31,12 @@
         </div>
       </div>
       <div class="row">
-        <div class="row-left">
           <p class="subtitle">
             {% for collection in product.collections %}
               {{- collection.title | link_to: collection.url }}
             {% endfor %}
           </p>
-        </div>
-        <div class="row-right">
-          <p class="subtitle">{% include 'product-price-listing' %}
-          </p>
-        </div>
+          <p class="subtitle">{% include 'product-price-listing' %}</p>
       </div>
     </div>
 
